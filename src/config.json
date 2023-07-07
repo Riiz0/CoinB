@@ -1,0 +1,20 @@
+{
+    "31337":{
+        "exchange": {
+            "address": ""
+        },
+        "BUNI":{
+            "address": ""
+        },
+        "explorerURL": "#"
+    },
+    "11155111": {
+        "exchange": {
+            "address": ""
+        },
+        "BUNI": {
+            "address": ""
+        },
+        "explorerURL": "https://sepolia.etherscan.io"
+    }
+}
