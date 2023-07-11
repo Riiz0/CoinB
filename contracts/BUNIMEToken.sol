@@ -8,6 +8,8 @@ import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 import './BUNINFTContract.sol';
 
+//Transcation Fee -> Developer of Contract
+
 contract BUNIMEToken is ERC20, Ownable{
     BUNINFTContract public nftContract;
 
