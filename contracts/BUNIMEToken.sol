@@ -9,7 +9,6 @@ import '@openzeppelin/contracts/access/Ownable.sol';
 import './BUNINFTContract.sol';
 
 //Transcation Fee -> Developer of Contract
-
 contract BUNIMEToken is ERC20, Ownable{
     BUNINFTContract public nftContract;
     uint256 public transactionFee;
@@ -19,7 +18,8 @@ contract BUNIMEToken is ERC20, Ownable{
         transactionFee = 6942; //Set the transaction fee to 0.732% (732 / 1,000,000)
     }
 
-    function burn(uint256 value) 
+    //Burning Mech maybe?
+    function burn(uint256 value)
     external {
         _burn(msg.sender, value);
     }
