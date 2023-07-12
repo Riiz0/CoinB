@@ -1,18 +1,18 @@
 {
     "31337":{
-        "exchange": {
+        "NFTContract": {
             "address": ""
         },
-        "BUNI":{
+        "TokenContract":{
             "address": ""
         },
         "explorerURL": "#"
     },
     "11155111": {
-        "exchange": {
+        "NFTContract": {
             "address": ""
         },
-        "BUNI": {
+        "TokenContract": {
             "address": ""
         },
         "explorerURL": "https://sepolia.etherscan.io"

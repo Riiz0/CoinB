@@ -26,19 +26,22 @@ function mintNFT() external {
         _hasLevel3NFT[msg.sender] = true;
     }
     
-    if (tokenBalance >= TOKENS_FOR_LEVEL2) {
+    else if (tokenBalance >= TOKENS_FOR_LEVEL2) {
         require(!_hasLevel2NFT[msg.sender], "You already have a Level 2 NFT");
         _mint(msg.sender, 2);
         _hasLevel2NFT[msg.sender] = true;
     }
     
-    if (tokenBalance >= TOKENS_FOR_LEVEL1) {
+    else if (tokenBalance >= TOKENS_FOR_LEVEL1) {
         require(!_hasLevel1NFT[msg.sender], "You already have a Level 1 NFT");
         _mint(msg.sender, 1);
         _hasLevel1NFT[msg.sender] = true;
     }
-}
 
+    else {
+        revert("Insufficient tokens to mint any NFT");
+    }
+}
 
     function transferNFT(address recipient, uint256 tokenId) external {
         //Text Here
@@ -53,5 +56,4 @@ function mintNFT() external {
     returns (uint256) {
         //Text Here
     }
-
 }
