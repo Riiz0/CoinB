@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 body {
   margin: 0;
-  background-color: #666465;
+  background-color: #212121;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -97,5 +100,250 @@ code {
 
   50% {
     transform: scale(1.2, 1);
+  }
+}
+
+/* 
+//NAVBAR
+*/
+.navbar-container {
+  background-color: #0c0b0ab8;
+  display: flex;
+  justify-content: space-between; /* Adjust alignment to space between */
+  align-items: center;
+  padding: 10px 20px; /* Add horizontal padding */
+  border-radius: 42px;
+  margin: 20px auto 0;
+  width: 1000px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 27.5px; /* Adjust this margin as needed */
+}
+
+.hamburger {
+  color: white;
+  margin-right: 31.5px; /* Adjust this margin as needed */
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+}
+
+.title {
+  font-size: 33px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 49px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit'; /* Apply Montserrat font */
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 21px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: #555555;
+}
+
+/* 
+//HOMESCREEN TOP SECTION
+*/
+/* Left Sidebar */
+.left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px; /* Adjust the width as needed */
+  background-color: #0c0b0ab8;
+  z-index: -1; /* Place it behind the content */
+}
+
+/* Right Sidebar */
+.right-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 200px; /* Adjust the width as needed */
+  background-color: #0c0b0ab8;
+  z-index: -1; /* Place it behind the content */
+}
+
+.body-top-section {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  border-radius: 42px;
+  margin: 40px auto; /* Add margin to center the section and create distance from top */
+  width: 1150px;
+  height: 1075px; /* Adjust the height as needed */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  position: relative; /* Add relative positioning to the container */
+}
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Set a fixed height */
+  overflow: hidden;
+  background-image: url('./assets/HomeScreen_Image2.PNG');
+  background-size: cover; /* Adjust the background size to fully cover the container */
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 42px; /* Add rounded corners to the background container */
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.section-content {
+  position: relative; /* Add relative positioning to the section-content */
+  text-align: left;
+  padding: 20px; /* Add padding to space out the content from the edges */
+  margin-top: 15px; /* Adjust the margin from the top */
+  margin-left: 30px; /* Adjust the margin from the left */
+  z-index: 1; /* Ensure the section-content is above the background image */
+}
+
+.section-title {
+  font-size: 59px; /* Increase font size for the title */
+  font-weight: bold;
+  margin-bottom: 5px; /* Reduce the margin between title and subtitle */
+  max-width: 61%; /* Set the maximum width for the title */
+  color: white; /* Set title text color to white */
+}
+
+.section-subtitle {
+  font-size: 20px; /* Increase font size for the subtitle */
+  font-weight: bold;
+  color: white; /* Set subtitle text color to white */
+  margin-bottom: 35px; /* Adjust space between subtitle and buttons */
+  margin-top: 0;
+}
+
+.section-buttons {
+  display: flex;
+  gap: 20px; /* Add some spacing between the buttons */
+}
+
+.section-button.left-button {
+  padding: 15px 30px; /* Increase padding to make buttons bigger */
+  font-size: 18px; /* Increase font size for button text */
+  background-color: #9E9E9E; /* Set the background color of the left button */
+  color: black; /* Set text color for the left button */
+  border: none;
+  border-radius: 30px; /* Increase the border-radius for rounder buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-button.left-button:hover {
+  background-color: #FFC8DD; /* Change the background color on hover */
+  color: white; /* Change text color on hover */
+}
+
+.section-button.right-button {
+  padding: 15px 30px; /* Increase padding to make buttons bigger */
+  font-size: 18px; /* Increase font size for button text */
+  background-color: transparent; /* Set transparent background color */
+  color: white; /* Set text color for the right button */
+  border: 2px solid #9E9E9E; /* Add border to the right button */
+  border-radius: 30px; /* Increase the border-radius for rounder buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.section-button.right-button:hover {
+  background-color: #FFC8DD; /* Change the background color on hover */
+  border-color: #FFC8DD; /* Change border color on hover */
+  color: white; /* Change text color on hover */
+}
+
+.left-sidebar,
+.right-sidebar {
+  background-color: #0c0b0ab8;
+  width: 50px; /* Adjust the width of the sidebars */
+  height: 100vh;
+  width: 300px;
+  /* Other sidebar styles */
+}
+
+.main-content {
+  flex-grow: 1; /* Expand to fill available space */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .body-top-section {
+    flex-direction: column; /* Stack content on top of each other */
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    display: none; /* Hide sidebars on smaller screens */
+  }
+}
+
+/* Additional media queries for other screen sizes */
+@media (max-width: 1440px) {
+  .body-top-section {
+    flex-direction: column; /* Stack content on top of each other */
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    display: none; /* Hide sidebars on smaller screens */
+  }
+}
+
+@media (max-width: 1280px) {
+  .body-top-section {
+    flex-direction: column; /* Stack content on top of each other */
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    display: none; /* Hide sidebars on smaller screens */
   }
 }
