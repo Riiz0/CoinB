@@ -136,7 +136,7 @@ code {
 
 .hamburger {
   color: white;
-  margin-right: 31.5px; /* Adjust this margin as needed */
+  margin-right: 37.5px; /* Adjust this margin as needed */
 }
 
 .logo {
@@ -264,15 +264,16 @@ code {
 
 .section-buttons {
   display: flex;
-  gap: 20px; /* Add some spacing between the buttons */
+  gap: 25px; /* Add some spacing between the buttons */
 }
 
 .section-button.left-button {
-  padding: 15px 30px; /* Increase padding to make buttons bigger */
-  font-size: 18px; /* Increase font size for button text */
+  padding: 20px 35px; /* Increase padding to make buttons bigger */
+  font-size: 20px; /* Increase font size for button text */
   background-color: #9E9E9E; /* Set the background color of the left button */
   color: black; /* Set text color for the left button */
   border: none;
+  font-weight: bold;
   border-radius: 30px; /* Increase the border-radius for rounder buttons */
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -284,11 +285,12 @@ code {
 }
 
 .section-button.right-button {
-  padding: 15px 30px; /* Increase padding to make buttons bigger */
-  font-size: 18px; /* Increase font size for button text */
+  padding: 20px 35px; /* Increase padding to make buttons bigger */
+  font-size: 20px; /* Increase font size for button text */
   background-color: transparent; /* Set transparent background color */
   color: white; /* Set text color for the right button */
   border: 2px solid #9E9E9E; /* Add border to the right button */
+  font-weight: bold;
   border-radius: 30px; /* Increase the border-radius for rounder buttons */
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
@@ -312,6 +314,168 @@ code {
 .main-content {
   flex-grow: 1; /* Expand to fill available space */
 }
+
+/* HomeScreen.css */
+/* Define fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Define slide-up animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Define scale animation */
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Apply animations to elements */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-in-out;
+}
+
+.animate-scale {
+  animation: scale 0.5s ease-in-out;
+}
+
+.sponsor-container {
+  margin-top: 70px; /* Add some distance between the two sections */
+  width: 100%;
+  height: 200px;
+  border-radius: 42px;
+  background-color: #9E9E9E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add additional styling as needed */
+}
+
+.sponsor-images {
+  display: flex;
+  gap: 30px; /* Adjust the gap between images */
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-image {
+  width: 300px; /* Set a consistent width for the images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 16px; /* Add rounded corners to the images */
+}
+
+.about-container {
+  margin-top: 70px; /* Add some distance between the two sections */
+  width: 100%;
+  height: 567.5px;
+  border-radius: 42px;
+  background-color: transparent;
+  border: 2px solid #0c0b0ab8; /* Set the border color */
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  /* Add additional styling as needed */
+}
+
+.about-content {
+  position: relative; /* Add relative positioning to the section-content */
+  text-align: left;
+  padding: 20px; /* Add padding to space out the content from the edges */
+  margin-top: 0px; /* Adjust the margin from the top */
+  margin-left: 20px; /* Adjust the margin from the left */
+  z-index: 1; /* Ensure the section-content is above the background image */
+}
+
+.about-title {
+  font-size: 59px; /* Increase font size for the title */
+  font-weight: bold;
+  margin-bottom: 15px; /* Reduce the margin between title and subtitle */
+  max-width: 100%; /* Set the maximum width for the title */
+  color: white; /* Set title text color to white */
+  margin-top: 0;
+}
+
+.about-subtitle {
+  font-size: 18px; /* Increase font size for the subtitle */
+  font-weight: normal;
+  color: #AEAEAE; /* Set subtitle text color to white */
+  margin-bottom: 5px; /* Adjust space between subtitle and buttons */
+  margin-top: 0;
+}
+
+.about-text {
+  font-size: 17px; /* Increase font size for the title */
+  font-weight: normal;
+  margin-bottom: 15px; /* Reduce the margin between title and subtitle */
+  max-width: 50%; /* Set the maximum width for the title */
+  color: white; /* Set title text color to white */
+  margin-top: 0;
+}
+
+.about2-container {
+  margin-top: 10px;
+  width: 100%;
+  height: 567.5px;
+  border-radius: 42px;
+  background-color: transparent;
+  border: 2px solid #0c0b0ab8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.about2-content {
+  position: relative;
+  text-align: left; /* Align the text to the right */
+  padding: 20px;
+  margin-top: 15px;
+  margin-left: 20px;
+  z-index: 1;
+}
+
+.about2-text {
+  font-size: 17px;
+  font-weight: normal;
+  margin-bottom: 15px;
+  max-width: 50%;
+  color: white;
+  margin-top: 0;
+}
+
+.ecosystem-container {
+  margin-top: 70px; /* Add some distance between the two sections */
+  width: 100%;
+  height: 200px;
+  border-radius: 42px;
+  background-color: #0c0b0ab8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add additional styling as needed */
+}
+
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
