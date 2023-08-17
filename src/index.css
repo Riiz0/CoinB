@@ -284,6 +284,10 @@ code {
   color: white; /* Change text color on hover */
 }
 
+.no-underline {
+  text-decoration: none;
+}
+
 .section-button.right-button {
   padding: 20px 35px; /* Increase padding to make buttons bigger */
   font-size: 20px; /* Increase font size for button text */
@@ -307,7 +311,7 @@ code {
   background-color: #0c0b0ab8;
   width: 50px; /* Adjust the width of the sidebars */
   height: 100vh;
-  width: 300px;
+  width: 450px;
   /* Other sidebar styles */
 }
 
@@ -399,7 +403,8 @@ code {
   /* Add additional styling as needed */
 }
 
-.about-content {
+.about-content,
+.ecosystem-content {
   position: relative; /* Add relative positioning to the section-content */
   text-align: left;
   padding: 20px; /* Add padding to space out the content from the edges */
@@ -408,7 +413,8 @@ code {
   z-index: 1; /* Ensure the section-content is above the background image */
 }
 
-.about-title {
+.about-title, 
+.ecosystem-title {
   font-size: 59px; /* Increase font size for the title */
   font-weight: bold;
   margin-bottom: 15px; /* Reduce the margin between title and subtitle */
@@ -417,7 +423,8 @@ code {
   margin-top: 0;
 }
 
-.about-subtitle {
+.about-subtitle,
+.ecosystem-subtitle {
   font-size: 18px; /* Increase font size for the subtitle */
   font-weight: normal;
   color: #AEAEAE; /* Set subtitle text color to white */
@@ -467,15 +474,48 @@ code {
 .ecosystem-container {
   margin-top: 70px; /* Add some distance between the two sections */
   width: 100%;
-  height: 200px;
+  height: 150px;
   border-radius: 42px;
-  background-color: #0c0b0ab8;
+  background-color: transparent;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   /* Add additional styling as needed */
 }
 
+.ecosystem-boxes-container {
+  margin-top: 0;
+  width: 100%;
+  height: 925px;
+  border-radius: 42px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ecosystem-boxes-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0; /* Adjust spacing between rows */
+}
+
+.ecosystem-boxes-box {
+  width: 475px;
+  height: 425px;
+  border: 2px solid #0c0b0ab8;
+  background-color: transparent;
+  border-radius: 42px;
+  margin: 10px;
+  margin-top: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {

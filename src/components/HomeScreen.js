@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function HomeScreen() {
   return (
@@ -16,7 +17,9 @@ function HomeScreen() {
             <h1 className="section-title animate-slide-up">JOIN THE BUNIME REVOLUTION</h1>
             <p className="section-subtitle animate-slide-up">YOUR ANIME COMMUNITY CRYPTOCURRENCY</p>
             <div className="section-buttons animate-fade-in">
-              <button className="section-button left-button animate-scale">Buy BUNI</button>
+            <Link to="/Buy" className="section-button left-button animate-scale no-underline">
+          Buy BUNI
+        </Link>
               <button className="section-button right-button animate-scale">Explore</button>
             </div>
           </div>
@@ -25,9 +28,15 @@ function HomeScreen() {
         {/* Sponsor/Link Container */}
         <div className="sponsor-container">
         <div className="sponsor-images">
-            <img src={require('../assets/coinmarketcap.png')} alt="CoinMarketCap" className="sponsor-image" />
-            <img src={require('../assets/coingecko.webp')} alt="CoinGecko" className="sponsor-image" />
+          <a href="https://coinmarketcap.com/" target="_blank" rel="noopener noreferrer">
+          <img src={require('../assets/coinmarketcap.png')} alt="CoinMarketCap" className="sponsor-image" />
+          </a>
+          <a href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer">
+          <img src={require('../assets/coingecko.webp')} alt="CoinGecko" className="sponsor-image" />
+          </a>
+          <a href="https://medium.com/" target="_blank" rel="noopener noreferrer">
             <img src={require('../assets/Medium.png')} alt="Medium" className="sponsor-image" />
+          </a>
           </div>
         </div>
 
@@ -53,8 +62,21 @@ function HomeScreen() {
 
         {/* Ecosystem Container */}
         <div className="ecosystem-container">
-          <p>text</p>
-        </div>
+          <div className="ecosystem-content">
+             <p className="ecosystem-subtitle">ECOSYSTEM</p>
+             <h1 className="ecosystem-title">THE BUNIME ECOSYSTEM</h1>             
+            </div>
+            </div>
+            <div className="ecosystem-boxes-container">
+              <div className="ecosystem-boxes-row">
+                <div className="ecosystem-boxes-box"></div>
+                <div className="ecosystem-boxes-box"></div>
+              </div>
+            <div className="ecosystem-boxes-row">
+                <div className="ecosystem-boxes-box"></div>
+                <div className="ecosystem-boxes-box"></div>
+            </div>               
+          </div>
       </div>
       
       {/* Right Sidebar */}
