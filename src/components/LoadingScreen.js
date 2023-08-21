@@ -7,7 +7,7 @@ function LoadingScreen() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3050); // Change the delay as needed (in milliseconds)
+    }, 3000); // Change the delay as needed (in milliseconds)
   }, []);
 
   if (isLoading) {

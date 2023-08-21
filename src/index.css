@@ -29,28 +29,25 @@ code {
 
 .loading-text {
   color: #FFAFCC; /* Same color as your loader */
-  font-size: 16px; /* Adjust the font size as needed */
-  margin-top: 122px; /* Add a margin to move the text below the loader */
+  font-size: 25px; /* Adjust the font size as needed */
+  margin-top: 40px; /* Add a margin to move the text below the loader */
+  text-align: center; /* Center the text horizontally */
+  margin-bottom: 100px;
 }
 
 .loader {
-  width: 48px;
-  height: 48px;
-  margin: auto;
-  position: absolute; /* Change to "absolute" */
-  top: 0; /* Center vertically */
-  bottom: 0;
-  left: 0; /* Center horizontally */
-  right: 0;
+  width: 96px; /* Increase width */
+  height: 96px; /* Increase height */
+  position: relative;
 }
 
 .loader:before {
   content: '';
-  width: 48px;
-  height: 5px;
+  width: 96px; /* Increase width */
+  height: 10px; /* Increase height */
   background: #FFAFCC;
   position: absolute;
-  top: 60px;
+  top: 120px; /* Adjust position */
   left: 0;
   border-radius: 50%;
   animation: shadow324 0.5s linear infinite;
@@ -60,30 +57,30 @@ code {
   content: '';
   width: 100%;
   height: 100%;
-  background: #FFC8DD;
+  background: #FFAFCC;
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 4px;
+  border-radius: 8px; /* Increase border-radius */
   animation: jump7456 0.5s linear infinite;
 }
 
 @keyframes jump7456 {
   15% {
-    border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 6px; /* Increase border-radius */
   }
 
   25% {
-    transform: translateY(9px) rotate(22.5deg);
+    transform: translateY(18px) rotate(22.5deg); /* Increase translateY */
   }
 
   50% {
-    transform: translateY(18px) scale(1, .9) rotate(45deg);
-    border-bottom-right-radius: 40px;
+    transform: translateY(36px) scale(1, .9) rotate(45deg); /* Increase translateY and scale */
+    border-bottom-right-radius: 80px; /* Increase border-radius */
   }
 
   75% {
-    transform: translateY(9px) rotate(67.5deg);
+    transform: translateY(18px) rotate(67.5deg); /* Increase translateY */
   }
 
   100% {
@@ -92,9 +89,8 @@ code {
 }
 
 @keyframes shadow324 {
-
   0%,
-    100% {
+  100% {
     transform: scale(1, 1);
   }
 
@@ -109,7 +105,7 @@ code {
 .navbar-container {
   background-color: #0c0b0ab8;
   display: flex;
-  justify-content: space-between; /* Adjust alignment to space between */
+  justify-content: center; /* Adjust alignment to space between */
   align-items: center;
   padding: 10px 20px; /* Add horizontal padding */
   border-radius: 42px;
@@ -157,7 +153,8 @@ code {
   gap: 49px;
   margin: 0;
   padding: 0;
-  font-family: 'Outfit'; /* Apply Montserrat font */
+  font-family: 'Outfit';
+  align-items: center;
 }
 
 .nav-links li {
@@ -178,6 +175,17 @@ code {
   background-color: #555555;
 }
 
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 42px;
+  z-index: 1000; /* Ensure the navbar appears above other content */
+}
+
 /* 
 //HOMESCREEN TOP SECTION
 */
@@ -187,7 +195,7 @@ code {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 200px; /* Adjust the width as needed */
+  width: 175px; /* Adjust the width as needed */
   background-color: #0c0b0ab8;
   z-index: -1; /* Place it behind the content */
 }
@@ -198,7 +206,7 @@ code {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 200px; /* Adjust the width as needed */
+  width: 175px; /* Adjust the width as needed */
   background-color: #0c0b0ab8;
   z-index: -1; /* Place it behind the content */
 }
@@ -220,7 +228,7 @@ code {
   width: 100%;
   height: 100%; /* Set a fixed height */
   overflow: hidden;
-  background-image: url('./assets/HomeScreen_Image2.PNG');
+  background-image: url('./assets/CONTAINER1.PNG');
   background-size: cover; /* Adjust the background size to fully cover the container */
   background-repeat: no-repeat;
   background-position: center center;
@@ -311,7 +319,7 @@ code {
   background-color: #0c0b0ab8;
   width: 50px; /* Adjust the width of the sidebars */
   height: 100vh;
-  width: 450px;
+  width: 375px;
   /* Other sidebar styles */
 }
 
@@ -415,7 +423,7 @@ code {
 
 .about-title, 
 .ecosystem-title {
-  font-size: 59px; /* Increase font size for the title */
+  font-size: 59px; 
   font-weight: bold;
   margin-bottom: 15px; /* Reduce the margin between title and subtitle */
   max-width: 100%; /* Set the maximum width for the title */
@@ -471,6 +479,35 @@ code {
   margin-top: 0;
 }
 
+/* Apply hover effect to the about section */
+.about-container:hover,
+.about2-container:hover {
+  border-color: #FFC8DD; /* Change border color on hover */
+}
+
+.about-container:hover .about-title,
+.about-container:hover .about-subtitle {
+  color: #FFC8DD; /* Change title and subtitle color on hover */
+}
+
+/* Apply hover effect to the ecosystem section */
+.ecosystem-container:hover {
+  border-color: #FFC8DD; /* Change border color on hover */
+}
+
+.ecosystem-container:hover .ecosystem-title,
+.ecosystem-container:hover .ecosystem-subtitle {
+  color: #FFC8DD; /* Change title and subtitle color on hover */
+}
+
+.ecosystem-boxes-box:hover,
+.ecosystem-boxes-box-text:hover,
+.ecosystem-boxes-box-subtext:hover {
+  border-color: #FFC8DD;
+  color: #FFC8DD;
+}
+
+
 .ecosystem-container {
   margin-top: 70px; /* Add some distance between the two sections */
   width: 100%;
@@ -512,9 +549,22 @@ code {
   margin-top: 0;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column; /* Stack items vertically */
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white; /* Set default text color */
+}
+
+.ecosystem-boxes-box-text {
+  font-size: 59px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.ecosystem-boxes-box-subtext {
+  font-size: 18px; 
+  font-weight: normal;
 }
 
 /* Media query for smaller screens */
