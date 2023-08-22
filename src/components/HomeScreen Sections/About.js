@@ -2,9 +2,9 @@ import React from "react"
 
 function About () {
     return(
-        <div id="about">
+        <div id="about" className="about-container">
         {/* About Container */}
-        <div>
+        <div className="about-background-image"></div>
             <div className="about-content">
                 <p className="about-subtitle">ABOUT</p>
                 <h1 className="about-title">WHAT IS BUNIME?</h1>
@@ -13,7 +13,6 @@ function About () {
                 <p className="about-text">BUNIME offers an opportunity to participate in the crypto world with a distinct anime twist. It allows individuals to buy and hold BUNIME tokens, representing their involvement in this thriving community. However, it's important to note that investing in BUNIME should be done at one's own risk, as with any cryptocurrency.</p>
             </div>
         </div>
-    </div>
     );
 }
 

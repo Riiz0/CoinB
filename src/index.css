@@ -195,7 +195,7 @@ code {
   top: 0;
   left: 0;
   height: 100vh;
-  width: 175px; /* Adjust the width as needed */
+  width: 155px; /* Adjust the width as needed */
   background-color: #0c0b0ab8;
   z-index: -1; /* Place it behind the content */
 }
@@ -206,10 +206,20 @@ code {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 175px; /* Adjust the width as needed */
+  width: 155px; /* Adjust the width as needed */
   background-color: #0c0b0ab8;
   z-index: -1; /* Place it behind the content */
 }
+
+.left-sidebar,
+.right-sidebar {
+  background-color: #0c0b0ab8;
+  width: 50px; /* Adjust the width of the sidebars */
+  height: 100vh;
+  width: 300px;
+  /* Other sidebar styles */
+}
+
 
 .body-top-section {
   display: flex;
@@ -314,15 +324,6 @@ code {
   color: white; /* Change text color on hover */
 }
 
-.left-sidebar,
-.right-sidebar {
-  background-color: #0c0b0ab8;
-  width: 50px; /* Adjust the width of the sidebars */
-  height: 100vh;
-  width: 375px;
-  /* Other sidebar styles */
-}
-
 .main-content {
   flex-grow: 1; /* Expand to fill available space */
 }
@@ -399,16 +400,32 @@ code {
 }
 
 .about-container {
-  margin-top: 70px; /* Add some distance between the two sections */
+  margin-top: 70px;
   width: 100%;
   height: 567.5px;
   border-radius: 42px;
   background-color: transparent;
-  border: 2px solid #0c0b0ab8; /* Set the border color */
+  border: 2px solid #0c0b0ab8;
   display: flex;
   justify-content: left;
   align-items: left;
-  /* Add additional styling as needed */
+  position: relative; /* Add relative positioning */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.about-background-image {
+  position: absolute; /* Position the background image */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 53%; /* Set the width of the image */
+  background-image: url('./assets/HomeScreen_Image1.png'); /* Replace with your image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right center; /* Position the image to the right */
+  z-index: -1; /* Place the image behind the content */
+  opacity: 0.8; /* Adjust the opacity of the image */
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.022));
 }
 
 .about-content,
@@ -457,16 +474,20 @@ code {
   background-color: transparent;
   border: 2px solid #0c0b0ab8;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .about2-content {
-  position: relative;
-  text-align: left; /* Align the text to the right */
+  position:relative;
+  text-align: right; /* Align the text to the right */
   padding: 20px;
   margin-top: 15px;
-  margin-left: 20px;
+  margin-left: auto; /* Adjust margin to push the text to the right edge */
+  margin-right: 20px;
+  max-width: 50%; /* Limit the width of the text */
   z-index: 1;
 }
 
@@ -474,9 +495,23 @@ code {
   font-size: 17px;
   font-weight: normal;
   margin-bottom: 15px;
-  max-width: 50%;
+  max-width: 100;
   color: white;
   margin-top: 0;
+}
+
+.about2-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 53%;
+  background-image: url('./assets/HomeScreen_Image2.png'); /* Replace with your image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:left center; /* Position the image to the right */
+  z-index: -1;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.005));
 }
 
 /* Apply hover effect to the about section */

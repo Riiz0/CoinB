@@ -45,16 +45,17 @@ function HomeScreen() {
         </div>
 
         {/* About Container */}
-        <Element name="about" className="about-container">
+        <Element name="about">
           <About />
         </Element>
 
         {/* About2 Container */}
         <div className="about2-container">
-                <div className="about2-content">
-                    <p className="about2-text">In addition to its role as a community coin, BUNIME has exciting plans to release NFT (Non-Fungible Token) collections based on different anime shows. NFTs are unique digital assets that can represent ownership of various forms of digital content, such as artwork, collectibles, and more. With BUNIME, fans will have the opportunity to acquire and trade exclusive NFTs featuring their favorite anime characters and moments.</p>          
-                    <p className="about2-text">As a community-driven token, BUNIME places the anime community at its core. It aims to foster a welcoming and inclusive environment where fans can connect, share their enthusiasm, and collaborate on various initiatives. Whether it's discussing the latest anime releases, organizing events, or supporting anime-related projects, BUNIME is committed to nurturing a strong and supportive anime community.</p>
-                    <p className="about2-text">Join BUNIME today and immerse yourself in the exciting fusion of anime and cryptocurrency. Embrace the spirit of fun, friendship, and creative exploration that BUNIME brings to the world of anime lovers and crypto enthusiasts alike.</p>
+        <div className="about2-background-image"></div>
+              <div className="about2-content">
+                  <p className="about2-text">In addition to its role as a community coin, BUNIME has exciting plans to release NFT (Non-Fungible Token) collections based on different anime shows. NFTs are unique digital assets that can represent ownership of various forms of digital content, such as artwork, collectibles, and more. With BUNIME, fans will have the opportunity to acquire and trade exclusive NFTs featuring their favorite anime characters and moments.</p>          
+                  <p className="about2-text">As a community-driven token, BUNIME places the anime community at its core. It aims to foster a welcoming and inclusive environment where fans can connect, share their enthusiasm, and collaborate on various initiatives. Whether it's discussing the latest anime releases, organizing events, or supporting anime-related projects, BUNIME is committed to nurturing a strong and supportive anime community.</p>
+                  <p className="about2-text">Join BUNIME today and immerse yourself in the exciting fusion of anime and cryptocurrency. Embrace the spirit of fun, friendship, and creative exploration that BUNIME brings to the world of anime lovers and crypto enthusiasts alike.</p>
                 </div>
             </div>
 
