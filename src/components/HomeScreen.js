@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Element } from 'react-scroll';
 
+//Imports
 import About from './HomeScreen Sections/About';
 import Ecosystem from './HomeScreen Sections/Ecosystem';
 
