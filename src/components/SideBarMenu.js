@@ -14,10 +14,13 @@ const SideBarMenu = ({ isOpen, onClose }) => {
         <Link to="/">Updates</Link>
         <Link to="/Buy">Buy</Link>
         <Link to="/">Statistics</Link>
+        <Link to="/">Tokenomics</Link>
+        <Link to="/">NFT Collections</Link>
+        <Link to="/">Community</Link>
 
         <div className="sidebar-title sidebar-spacing">Resources</div>
         <Link to="/">Roadmap</Link>
-        <Link to="/">Legal</Link>
+        <Link to="/">Legal Disclaimer</Link>
         <Link to="/">Bridge</Link>
         <Link to="/">Medium</Link>
         <Link to="/">NFT Mints</Link>

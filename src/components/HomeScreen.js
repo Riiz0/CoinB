@@ -7,7 +7,7 @@ import Ecosystem from './HomeScreen Sections/Ecosystem';
 
 function HomeScreen() {
   return (
-    <div className="body-top-section">
+    <div name="home" className="body-top-section">
 
       {/* Left Sidebar */}
       <div className="left-sidebar"></div>

@@ -16,6 +16,13 @@ function Navbar() {
     setIsSideBarOpen(!isSideBarOpen);
   };
 
+  const scrollToHome = () => {
+    scroller.scrollTo('home', {
+      smooth: true,
+      offset: -50, // Adjust this value as needed to align properly with your sections
+    });
+  };
+
   const scrollToAbout = () => {
     scroller.scrollTo('about', {
       smooth: true,
@@ -57,10 +64,10 @@ function Navbar() {
         </div>
         <ul className="nav-links">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={scrollToHome} >Home</Link>
           </li>
           <li>
-          <Link to="/"onClick={scrollToAbout}>About</Link>
+          <Link to="/" onClick={scrollToAbout}>About</Link>
         </li>
         <li>
           <Link to="/" onClick={scrollToEcosystem}>Ecosystem</Link>

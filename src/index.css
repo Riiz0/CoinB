@@ -17,7 +17,7 @@ code {
 }
 
 /*
-  //LOADINGSCREEN
+///////////////////////////////////////////////////////LOADINGSCREEN
 */
 .loading-container {
   display: flex;
@@ -125,7 +125,7 @@ code {
 }
 
 /* 
-//DYNAMIC BACKGROUND FOR LOADINGSCREEN
+///////////////////////////////////////////////////////DYNAMIC BACKGROUND FOR LOADINGSCREEN
 */
 @keyframes animate {
   0%{
@@ -276,7 +276,7 @@ animation-delay: 0s;
 }
 
 /* 
-//NAVBAR
+///////////////////////////////////////////////////////NAVBAR
 */
 .navbar-container {
   background-color: #0c0b0ab8;
@@ -371,7 +371,7 @@ animation-delay: 0s;
 }
 
 /* 
-//HOMESCREEN TOP SECTION
+///////////////////////////////////////////////////////HOMESCREEN TOP SECTION
 */
 /* Left Sidebar */
 .left-sidebar {
@@ -816,7 +816,7 @@ animation-delay: 0s;
 }
 
 /* 
-//SIDEBAR MENU
+///////////////////////////////////////////////////////SIDEBAR MENU
 */
 .sidebar-menu {
   position: fixed;
@@ -845,7 +845,7 @@ animation-delay: 0s;
 }
 
 .sidebar-title {
-  font-size: 28px;
+  font-size: 29px;
   font-weight: bold;
   margin-bottom: 17.5px;
   color: #FFFFFF;
@@ -877,7 +877,8 @@ animation-delay: 0s;
   color: white; /* Set the color to white */
   text-decoration: none;
   text-align: left;
-  font-size: 18px;
+  font-size: 20.5px;
+  font-weight: lighter;
   transition: color 0.3s ease-in-out;
 }
 
