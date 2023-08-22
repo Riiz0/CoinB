@@ -821,23 +821,22 @@ animation-delay: 0s;
   z-index: -1; /* Place the image behind the content */
 }
 
-/* Set background images for each box */
-.ecosystem-boxes-box:nth-child(1)::before {
+.tokenomics-box::before {
   background-image: url('./assets/PlaceHolder_Image2.png');
 }
 
-.ecosystem-boxes-box:nth-child(2)::before {
+.nftcollections-box::before {
   background-image: url('./assets/PlaceHolder_Image.png');
 }
 
-/* Set background images for each box */
-.ecosystem-boxes-box:nth-child(3)::before {
+.whitepaper-box::before {
   background-image: url('./assets/PlaceHolder_Image.png');
 }
 
-.ecosystem-boxes-box:nth-child(4)::before {
+.community-box::before {
   background-image: url('./assets/PlaceHolder_Image2.png');
 }
+
 
 /* Apply the clearer image and zoom effect on hover */
 .ecosystem-boxes-box:hover {
