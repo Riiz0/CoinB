@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HomeScreen from './HomeScreen';
+import logo from '../assets/logo.png'
 
 function LoadingScreen() {
   const [isLoading, setLoading] = useState(true);
@@ -13,8 +14,26 @@ function LoadingScreen() {
   if (isLoading) {
     return (
     <div className="loading-container">
-        <div className="loader"></div>
-        <p className="loading-text">Loading...</p>
+      <ul className="background">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <img src={logo} alt="" className="bunny-image" />
+      <p className="loading-text">Loading...</p>
     </div>
     );
   }
