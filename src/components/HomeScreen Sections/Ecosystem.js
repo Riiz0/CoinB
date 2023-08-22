@@ -4,12 +4,10 @@ function Ecosystem () {
     return(
         <div id="ecosystem">
             {/* Ecosystem Container */}
-            <div>
                 <div className="ecosystem-content">
                    <p className="ecosystem-subtitle">ECOSYSTEM</p>
                    <h1 className="ecosystem-title">THE BUNIME ECOSYSTEM</h1>             
                 </div>
-            </div>
                 <div className="ecosystem-boxes-container">
                     <div className="ecosystem-boxes-row">
                       <div className="ecosystem-boxes-box">

@@ -4,12 +4,18 @@ import { scroller } from 'react-scroll';
 import { Icon } from 'react-icons-kit';
 import { ic_menu } from 'react-icons-kit/md/ic_menu';
 
-// Import your logo
+//Imports
+import SideBarMenu from './SideBarMenu';
 import logo from '../assets/logo.png'
 
-function Navbar({ handleMenuToggle }) {
+function Navbar() {
   const [scrolling, setScrolling] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
+  };
+
   const scrollToAbout = () => {
     scroller.scrollTo('about', {
       smooth: true,
@@ -63,7 +69,8 @@ function Navbar({ handleMenuToggle }) {
           <Link to="/Buy">Buy</Link>
           </li>
         </ul>
-        <Icon icon={ic_menu} size={24} onClick={handleMenuToggle} className="hamburger" />
+        <SideBarMenu isOpen={isSideBarOpen} onClose={toggleSideBar} />
+        <Icon icon={ic_menu} size={24} onClick={toggleSideBar} className="hamburger" />
       </div>
     </nav>
   </nav>    

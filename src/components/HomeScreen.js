@@ -63,7 +63,12 @@ function HomeScreen() {
         <Element name="ecosystem" className="ecosystem-container">
           <Ecosystem />
         </Element>
+
+        <div className="image-gif-container">
+          <div className="image-gif-background-image"></div>
         </div>
+
+      </div>
 
       {/* Right Sidebar */}
       <div className="right-sidebar"></div>

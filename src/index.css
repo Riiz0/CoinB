@@ -131,8 +131,16 @@ code {
 }
 
 .hamburger {
+  border-radius: 8px;
+  cursor: pointer;
   color: white;
+  transition: color 0.3s ease;
+  padding: 20px;
   margin-right: 37.5px; /* Adjust this margin as needed */
+}
+
+.hamburger:hover {
+  background-color: #555555;
 }
 
 .logo {
@@ -600,6 +608,105 @@ code {
 .ecosystem-boxes-box-subtext {
   font-size: 18px; 
   font-weight: normal;
+}
+
+.image-gif-container {
+  margin-top: 1000px; /* Add some distance between the ecosystem section and the new container */
+  margin-bottom: 50px; /* Add some distance at the bottom */
+  width: 100%;
+  height: 765px;
+  border-radius: 42px;
+  background-color: transparent;
+  border: 2px solid #0c0b0ab8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.image-gif-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: url('./assets/PlaceHolder_Image.png'); /* Replace with your image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+/* 
+//SIDEBAR MENU
+*/
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -775px; /* Move the sidebar off-screen initially */
+  width: 775px;
+  height: 100%;
+  background-color: #0c0b0ab8;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  box-shadow: -1px 0px 10px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid white; /* Add a left border with white color */
+}
+
+.sidebar-menu.open {
+  right: 0; /* Slide the sidebar into view */
+}
+
+/* Sidebar Options */
+.sidebar-options {
+  max-height: calc(100vh - 80px); /* Adjust to leave space for the close icon */
+  overflow-y: auto; /* Add scroll if content overflows */
+  padding: 20px;
+  text-align: left;
+  margin-left: 25px;
+}
+
+.sidebar-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 17.5px;
+  color: #FFFFFF;
+}
+
+.sidebar-spacing {
+  margin-top: 40px;
+}
+
+/* Sidebar Close Icon */
+.sidebar-close-icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  color: white; /* Set the color to white */
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar-close-icon:hover {
+  color: #FFC8DD; /* Apply the hover color */
+}
+
+/* Links in Sidebar */
+.sidebar-options a {
+  display: block;
+  margin-bottom: 10px;
+  color: white; /* Set the color to white */
+  text-decoration: none;
+  text-align: left;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar-options a:hover {
+  color: #FFC8DD; /* Apply the hover color */
 }
 
 /* Media query for smaller screens */
