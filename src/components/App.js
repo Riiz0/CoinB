@@ -17,11 +17,6 @@ function App() {
     }, 3000); // Change the delay as needed (in milliseconds)
   }, []);
 
-  const handleMenuToggle = () => {
-    // Implement your logic to toggle the hamburger menu here
-    console.log('Hamburger menu clicked');
-  };
-
   return (
     <Router>
       <div className="App">
@@ -29,11 +24,10 @@ function App() {
           <LoadingScreen />
         ) : (
           <>
-            <Navbar handleMenuToggle={handleMenuToggle} />
+            <Navbar />
             <div className="content">
               <Routes>
                 <Route path="/" element={<HomeScreen />} />
-                {/* Add more routes and components as needed */}
               </Routes>
             </div>
           </>

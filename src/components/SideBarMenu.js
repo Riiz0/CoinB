@@ -11,19 +11,19 @@ const SideBarMenu = ({ isOpen, onClose }) => {
           <Icon icon={cross} size={24} />
         </div>
         <div className="sidebar-title">Navigation</div>
-        <Link to="/">Updates</Link>
-        <Link to="/Buy">Buy</Link>
-        <Link to="/">Statistics</Link>
-        <Link to="/">Tokenomics</Link>
-        <Link to="/">NFT Collections</Link>
-        <Link to="/">Community</Link>
+        <Link to="/updates">Updates</Link>
+        <Link to="/buy">Buy</Link>
+        <Link to="/statistics">Statistics</Link>
+        <Link to="/tokenomics">Tokenomics</Link>
+        <Link to="/nftcollections">NFT Collections</Link>
+        <Link to="/community">Community</Link>
 
         <div className="sidebar-title sidebar-spacing">Resources</div>
-        <Link to="/">Roadmap</Link>
+        <Link to="/roadmap">Roadmap</Link>
         <Link to="/">Legal Disclaimer</Link>
         <Link to="/">Bridge</Link>
         <Link to="/">Medium</Link>
-        <Link to="/">NFT Mints</Link>
+        <Link to="/nftmints">NFT Mints</Link>
         <Link to="/">WhitePaper</Link>
       </div>
     </div>

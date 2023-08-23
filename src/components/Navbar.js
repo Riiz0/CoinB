@@ -73,7 +73,7 @@ function Navbar() {
           <Link to="/" onClick={scrollToEcosystem}>Ecosystem</Link>
         </li>
           <li>
-          <Link to="/Buy">Buy</Link>
+          <Link to="/buy">Buy</Link>
           </li>
         </ul>
         <SideBarMenu isOpen={isSideBarOpen} onClose={toggleSideBar} />
