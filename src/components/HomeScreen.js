@@ -6,7 +6,12 @@ import { Element } from 'react-scroll';
 import About from './HomeScreen Sections/About';
 import Ecosystem from './HomeScreen Sections/Ecosystem';
 
-function HomeScreen() {
+function HomeScreen({ setLoading }) {
+
+  const handleBuyBuniClick = () => {
+    setLoading(true);
+  };
+
   return (
     <div name="home" className="body-top-section">
 
@@ -22,7 +27,7 @@ function HomeScreen() {
             <h1 className="section-title animate-slide-up">JOIN THE BUNIME REVOLUTION</h1>
             <p className="section-subtitle animate-slide-up">YOUR ANIME COMMUNITY CRYPTOCURRENCY</p>
             <div className="section-buttons animate-fade-in">
-            <Link to="/Buy" className="section-button left-button animate-scale no-underline">
+            <Link to="/Buy" onClick={handleBuyBuniClick} className="section-button left-button animate-scale no-underline">
           Buy BUNI
         </Link>
               <button className="section-button right-button animate-scale">Explore</button>

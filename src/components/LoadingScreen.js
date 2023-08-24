@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import HomeScreen from './HomeScreen';
+import React, { useEffect } from 'react';
 import logo from '../assets/logo.png'
 
-function LoadingScreen() {
-  const [isLoading, setLoading] = useState(true);
-
+function LoadingScreen({ isLoading, setLoading, children }) {
   useEffect(() => {
-    setTimeout(() => {
+    if (!isLoading) {
+      return; // Don't run the timeout if isLoading is false
+    }
+    
+    const timeoutId = setTimeout(() => {
       setLoading(false);
     }, 3000); // Change the delay as needed (in milliseconds)
-  }, []);
+    
+    return () => clearTimeout(timeoutId); // Clear the timeout if the component unmounts or isLoading becomes false
+  }, [isLoading, setLoading]);
+
 
   if (isLoading) {
     return (
@@ -37,8 +41,7 @@ function LoadingScreen() {
     </div>
     );
   }
-
-  return <HomeScreen />;
+  return children;
 }
 
 export default LoadingScreen;

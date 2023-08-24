@@ -8,7 +8,7 @@ import { ic_menu } from 'react-icons-kit/md/ic_menu';
 import SideBarMenu from './SideBarMenu';
 import logo from '../assets/logo.png'
 
-function Navbar() {
+function Navbar({ setLoading }) {
   const [scrolling, setScrolling] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   
@@ -45,6 +45,10 @@ function Navbar() {
     }
   };
 
+  const handleBuyClick = () => {
+    setLoading(true);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -73,7 +77,7 @@ function Navbar() {
           <Link to="/" onClick={scrollToEcosystem}>Ecosystem</Link>
         </li>
           <li>
-          <Link to="/buy">Buy</Link>
+          <Link to="/Buy" onClick={handleBuyClick}>Buy</Link>
           </li>
         </ul>
         <SideBarMenu isOpen={isSideBarOpen} onClose={toggleSideBar} />

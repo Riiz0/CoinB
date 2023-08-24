@@ -11,9 +11,8 @@ const SideBarMenu = ({ isOpen, onClose }) => {
           <Icon icon={cross} size={24} />
         </div>
         <div className="sidebar-title">Navigation</div>
-        <Link to="/updates">Updates</Link>
-        <Link to="/buy">Buy</Link>
-        <Link to="/statistics">Statistics</Link>
+        <Link to="/Updates">Updates</Link>
+        <Link to="/Statistics">Statistics</Link>
         <Link to="/tokenomics">Tokenomics</Link>
         <Link to="/nftcollections">NFT Collections</Link>
         <Link to="/community">Community</Link>
