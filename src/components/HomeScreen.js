@@ -27,7 +27,7 @@ function HomeScreen({ setLoading }) {
             <h1 className="section-title animate-slide-up">JOIN THE BUNIME REVOLUTION</h1>
             <p className="section-subtitle animate-slide-up">YOUR ANIME COMMUNITY CRYPTOCURRENCY</p>
             <div className="section-buttons animate-fade-in">
-            <Link to="/Buy" onClick={handleBuyBuniClick} className="section-button left-button animate-scale no-underline">
+            <Link to="/Buy" target="_blank" onClick={handleBuyBuniClick} className="section-button left-button animate-scale no-underline">
           Buy BUNI
         </Link>
               <button className="section-button right-button animate-scale">Explore</button>

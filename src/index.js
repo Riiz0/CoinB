@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App pathname={window.location.pathname} /> {/* Pass the pathname */}
   </React.StrictMode>
 );
 

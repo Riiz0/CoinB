@@ -16,6 +16,91 @@ code {
     monospace;
 }
 
+/* 
+///////////////////////////////////////////////////////NAVBAR
+*/
+.buy-navbar-container {
+  background-color: #0c0b0ab8;
+  display: flex;
+  justify-content: center; /* Adjust alignment to space between */
+  align-items: center;
+  padding: 10px 20px; /* Add horizontal padding */
+  border-radius: 42px;
+  margin: 20px auto 0;
+  width: 1000px;
+}
+
+.buy-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.buy-logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 27.5px; /* Adjust this margin as needed */
+}
+
+.buy-logo {
+  width: 52px;
+  height: 52px;
+}
+
+.buy-title {
+  font-size: 33px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.buy-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 49px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit';
+  align-items: center;
+}
+
+.buy-nav-links li {
+  margin: 0;
+}
+
+.buy-nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 21px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-nav-links li a:hover {
+  background-color: #555555;
+}
+
+.buy-fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 42px;
+  z-index: 1000; /* Ensure the navbar appears above other content */
+}
+
+/* 
+///////////////////////////////////////////////////////Main Content
+*/
 .buy-main-content {
   flex-grow: 1; /* Expand to fill available space */
 }
