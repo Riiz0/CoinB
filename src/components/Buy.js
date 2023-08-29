@@ -1,10 +1,10 @@
 import React from 'react';
 
 //Imports
-import BuyNavbar from './BuyNavbar';
 import '.././buy.css'
 
 function Buy() {
+
   return (
     <div name="buy" className="buy-body-top-section">
       {/* Main Content */}

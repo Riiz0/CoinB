@@ -1,12 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { scroller } from 'react-scroll';
+import { ethers } from 'ethers';
 
 //Imports
 import logo from '../assets/logo.png'
 
-function BuyNavbar({ setLoading }) {
+function BuyNavbar({ setLoading, account }) {
     const [scrolling, setScrolling] = useState(false);
+
+    const connectHandler = async () => {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          const account = ethers.getAddress(accounts[0]);
+          console.log('Connected account:', account);
+          // You can store the connected account or perform other actions here
+        } catch (error) {
+          console.error('Error connecting to MetaMask:', error);
+        }
+    };
 
     const scrollToHome = () => {
       scroller.scrollTo('home', {
@@ -74,6 +86,26 @@ function BuyNavbar({ setLoading }) {
               </ul>
             </div>
           </nav>
+          <div className="buy-navbar-connect-container">
+            <div className="buy-navbar-connect">
+                        {account ? (
+                    <button
+                        type="button"
+                        className="buy-navbar-connect"
+                    >
+                        {account.slice(0, 6) + '...' + account.slice(38, 42)}
+                    </button>
+                ) : (
+                    <button
+                        type="button"
+                        className="buy-navbar-connect"
+                        onClick={connectHandler}
+                    >
+                        Connect
+                    </button>
+                )}
+            </div>
+        </div>
         </nav>    
         );
 }

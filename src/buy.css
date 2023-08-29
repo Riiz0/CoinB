@@ -40,6 +40,40 @@ code {
   position: relative;
 }
 
+.buy-navbar-connect-container {
+  background-color: #0c0b0ab8;
+  display: flex;
+  justify-content: center; /* Adjust alignment to space between */
+  align-items: center;
+  padding: 10px 20px; /* Add horizontal padding */
+  border-radius: 42px;
+  margin: 20px auto 0;
+  width: 100px;
+}
+
+.buy-navbar-connect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.buy-navbar-connect button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+  font-family: 'Outfit';
+}
+
+.buy-navbar-connect-container:hover {
+  background-color: #555555;
+}
+
 .buy-logo-title {
   display: flex;
   align-items: center;
