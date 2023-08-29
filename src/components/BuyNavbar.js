@@ -6,10 +6,10 @@ import { ethers } from 'ethers';
 //Imports
 import logo from '../assets/logo.png'
 
-function BuyNavbar({ setLoading, setAccount }) {
+function BuyNavbar() {
   const [scrolling, setScrolling] = useState(false);
-  const [account, setAccountState] = useState(null); // Rename the state variable
-  
+  const [account, setAccountState] = useState(null);
+
   const connectHandler = async () => {
     try {
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -69,9 +69,17 @@ function BuyNavbar({ setLoading, setAccount }) {
             </div>
             <ul className="buy-nav-links">
               <li>
-                <Link to="/" onClick={scrollToHome}>
-                  Swap
+                <div className="dropdown">
+                <Link to="/" onClick={scrollToAbout}>
+                  Burn Portal
                 </Link>
+                <Link to="/" onClick={scrollToEcosystem}>
+                  Liquidity
+                </Link>
+                </div> 
+                <Link to="/" onClick={scrollToHome}>
+                Swap
+              </Link>
               </li>
               <li>
                 <Link to="/" onClick={scrollToAbout}>

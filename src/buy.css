@@ -117,6 +117,7 @@ code {
 
 .buy-nav-links li {
   margin: 0;
+  position: relative; /* Needed for dropdown positioning */
 }
 
 .buy-nav-links li a {
@@ -130,6 +131,37 @@ code {
 }
 
 .buy-nav-links li a:hover {
+  background-color: #555555;
+}
+
+/* Add these styles to your existing CSS file */
+.dropdown {
+  position: absolute;
+  top: 175%;
+  left: 0;
+  display: none; /* Hide the dropdown by default */
+  background-color: #0c0b0ab8;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 150px;
+}
+
+.buy-nav-links li:hover .dropdown {
+  display: flex; /* Display the dropdown when hovering over a list item */
+  flex-direction: column;
+}
+
+.buy-nav-links .dropdown a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 21px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-nav-links .dropdown a:hover {
   background-color: #555555;
 }
 
