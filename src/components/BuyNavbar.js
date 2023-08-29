@@ -57,7 +57,7 @@ function BuyNavbar() {
       };
     }, []);
   
-    const buyNavbarClass = scrolling ? 'navbar fixed-navbar' : 'navbar';
+    const buyNavbarClass = scrolling ? 'navbar buy-fixed-navbar' : 'navbar';
     
     return (
       <nav className={buyNavbarClass}>
