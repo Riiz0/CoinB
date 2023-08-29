@@ -6,20 +6,21 @@ import { ethers } from 'ethers';
 //Imports
 import logo from '../assets/logo.png'
 
-function BuyNavbar({ setLoading, account }) {
-    const [scrolling, setScrolling] = useState(false);
-
-    const connectHandler = async () => {
-        try {
-          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          const account = ethers.getAddress(accounts[0]);
-          console.log('Connected account:', account);
-          // You can store the connected account or perform other actions here
-        } catch (error) {
-          console.error('Error connecting to MetaMask:', error);
-        }
-    };
-
+function BuyNavbar({ setLoading, setAccount }) {
+  const [scrolling, setScrolling] = useState(false);
+  const [account, setAccountState] = useState(null); // Rename the state variable
+  
+  const connectHandler = async () => {
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      const connectedAccount = ethers.getAddress(accounts[0]);
+      setAccountState(connectedAccount); // Use the state variable here
+      console.log('Connected account:', connectedAccount);
+    } catch (error) {
+      console.error('Error connecting to MetaMask:', error);
+    }
+  };
+    
     const scrollToHome = () => {
       scroller.scrollTo('home', {
         smooth: true,
@@ -49,10 +50,6 @@ function BuyNavbar({ setLoading, account }) {
       }
     };
   
-    const handleBuyClick = () => {
-      setLoading(true);
-    };
-  
     useEffect(() => {
       window.addEventListener('scroll', handleScroll);
       return () => {
@@ -63,51 +60,47 @@ function BuyNavbar({ setLoading, account }) {
     const buyNavbarClass = scrolling ? 'navbar fixed-navbar' : 'navbar';
     
     return (
-        <nav className={buyNavbarClass}>
-          <nav className="buy-navbar-container">
-            <div className="buy-navbar">
-              <div className="buy-logo-title">
-                <img src={logo} alt="Logo" className="logo" />
-                <h1 className="buy-title">BUNIME</h1>
-              </div>
-              <ul className="buy-nav-links">
-                <li>
-                  <Link to="/" onClick={scrollToHome} >Swap</Link>
-                </li>
-                <li>
-                <Link to="/" onClick={scrollToAbout}>Burn Portal</Link>
+      <nav className={buyNavbarClass}>
+        <nav className="buy-navbar-container">
+          <div className="buy-navbar">
+            <div className="buy-logo-title">
+              <img src={logo} alt="Logo" className="logo" />
+              <h1 className="buy-title">BUNIME</h1>
+            </div>
+            <ul className="buy-nav-links">
+              <li>
+                <Link to="/" onClick={scrollToHome}>
+                  Swap
+                </Link>
               </li>
               <li>
-                <Link to="/" onClick={scrollToEcosystem}>Liquidity</Link>
+                <Link to="/" onClick={scrollToAbout}>
+                  Burn Portal
+                </Link>
               </li>
-                <li>
-                <Link to="/Buy" target="_blank" onClick={handleBuyClick}>Buy</Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div className="buy-navbar-connect-container">
-            <div className="buy-navbar-connect">
-                        {account ? (
-                    <button
-                        type="button"
-                        className="buy-navbar-connect"
-                    >
-                        {account.slice(0, 6) + '...' + account.slice(38, 42)}
-                    </button>
+              <li>
+                <Link to="/" onClick={scrollToEcosystem}>
+                  Liquidity
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div className="buy-navbar-connect-wrapper">
+              <div className="buy-navbar-connect">
+                {account ? (
+                  <button type="button" className="buy-navbar-connect">
+                    {account.slice(0, 6) + '...' + account.slice(38, 42)}
+                  </button>
                 ) : (
-                    <button
-                        type="button"
-                        className="buy-navbar-connect"
-                        onClick={connectHandler}
-                    >
-                        Connect
-                    </button>
+                  <button type="button" className="buy-navbar-connect" onClick={connectHandler}>
+                    Connect
+                  </button>
                 )}
+              </div>
             </div>
-        </div>
-        </nav>    
-        );
-}
+      </nav>
+    );
+  }
 
 export default BuyNavbar;

@@ -22,17 +22,39 @@ code {
 .buy-navbar-container {
   background-color: #0c0b0ab8;
   display: flex;
-  justify-content: center; /* Adjust alignment to space between */
+  justify-content: center;
   align-items: center;
-  padding: 10px 20px; /* Add horizontal padding */
+  padding: 10px 20px;
   border-radius: 42px;
-  margin: 20px auto 0;
-  width: 1000px;
+  margin: 20px auto;
+  width: auto;
+  max-width: 1200px; /* Adjust the max-width as needed */
 }
 
 .buy-navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the content */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.buy-navbar-connect-wrapper {
+  background-color: #0c0b0ab8;
+  padding: 15px 25px;
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: auto;
+  margin-left: auto; /* Push the connect button to the right */
+}
+
+.buy-navbar-connect {
+  display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1200px;
@@ -43,22 +65,12 @@ code {
 .buy-navbar-connect-container {
   background-color: #0c0b0ab8;
   display: flex;
-  justify-content: center; /* Adjust alignment to space between */
+  justify-content: flex-end; /* Align to the right */
   align-items: center;
-  padding: 10px 20px; /* Add horizontal padding */
+  padding: 10px 20px;
   border-radius: 42px;
-  margin: 20px auto 0;
-  width: 100px;
-}
-
-.buy-navbar-connect {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
+  margin: 20px 0; /* Add margin to the top for space */
+  width: 150px;
 }
 
 .buy-navbar-connect button {
@@ -97,7 +109,7 @@ code {
   list-style: none;
   display: flex;
   gap: 49px;
-  margin: 0;
+  margin: 0 75px;
   padding: 0;
   font-family: 'Outfit';
   align-items: center;
