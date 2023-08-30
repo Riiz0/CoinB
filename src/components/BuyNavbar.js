@@ -9,6 +9,7 @@ function BuyNavbar() {
   const [scrolling, setScrolling] = useState(false);
   const [account, setAccountState] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
+  const [selectedNetwork, setSelectedNetwork] = useState('Select Network');
 
   const connectHandler = async () => {
     try {
@@ -16,9 +17,24 @@ function BuyNavbar() {
       const connectedAccount = ethers.getAddress(accounts[0]);
       setAccountState(connectedAccount); // Use the state variable here
       setIsClicked(true);
+
+      //Get And Set Connected Blockchain Network
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const network = await provider.getNetwork();
+      setSelectedNetwork(network.name);
     } catch (error) {
       console.error('Error connecting to MetaMask:', error);
     }
+  };
+
+  const networkOptions = [
+    { name: 'Ethereum', id: 1 },
+    { name: 'Polygon', id: 2 },
+    { name: 'BNB Smart Chain', id: 3 },
+  ];
+  
+  const handleNetworkChange = (selectedOption) => {
+    setSelectedNetwork(selectedOption.name);
   };
 
   const handleScroll = () => {
@@ -49,17 +65,17 @@ function BuyNavbar() {
             <ul className="buy-nav-links">
               <li>
                 <div className="dropdown">
-                <Link to="/">Swap</Link>
-                <Link to="/">Burn Portal</Link>
-                <Link to="/">Liquidity</Link>
+                <Link to="/Swap">Swap</Link>
+                <Link to="/BurnPortal">Burn Portal</Link>
+                <Link to="/Liquidity">Liquidity</Link>
                 </div> 
-                <Link to="/">Home</Link>
+                <Link to="/Buy">Home</Link>
               </li>
               <li>
-                <Link to="/">Info</Link>
+                <Link to="/Info">Info</Link>
               </li>
               <li>
-                <Link to="/">More</Link>
+                <Link to="/More">More</Link>
               </li>
             </ul>
           </div>
@@ -67,11 +83,17 @@ function BuyNavbar() {
               <ul className="buy-network-links">
                 <li>
                   <div className="network-dropdown">
-                    <Link to="/">Ethereum</Link>
-                    <Link to="/">Polygon</Link>
-                    <Link to="/">BNB Smart Chain</Link>
+                  {networkOptions.map((option) => (
+                    <Link
+                      key={option.id}
+                      to="/"
+                      onClick={() => handleNetworkChange(option)}
+                    >
+                      {option.name}
+                    </Link>
+                  ))}
                   </div>
-                    <Link to="/">Network</Link>
+                    <Link to="/">{selectedNetwork}</Link>
                 </li>
               </ul>
               {account ? (
