@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { scroller } from 'react-scroll';
 import { ethers } from 'ethers';
 
 //Imports
@@ -9,54 +8,34 @@ import logo from '../assets/logo.png'
 function BuyNavbar() {
   const [scrolling, setScrolling] = useState(false);
   const [account, setAccountState] = useState(null);
+  const [isClicked, setIsClicked] = useState(false);
 
   const connectHandler = async () => {
     try {
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
       const connectedAccount = ethers.getAddress(accounts[0]);
       setAccountState(connectedAccount); // Use the state variable here
-      console.log('Connected account:', connectedAccount);
+      setIsClicked(true);
     } catch (error) {
       console.error('Error connecting to MetaMask:', error);
     }
   };
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
     
-    const scrollToHome = () => {
-      scroller.scrollTo('home', {
-        smooth: true,
-        offset: -50, // Adjust this value as needed to align properly with your sections
-      });
-    };
-  
-    const scrollToAbout = () => {
-      scroller.scrollTo('about', {
-        smooth: true,
-        offset: -50, // Adjust this value as needed to align properly with your sections
-      });
-    };
-  
-    const scrollToEcosystem = () => {
-      scroller.scrollTo('ecosystem', {
-        smooth: true,
-        offset: -50, // Adjust this value as needed to align properly with your sections
-      });
-    };
-    
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    };
-  
-    useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-  
     const buyNavbarClass = scrolling ? 'navbar buy-fixed-navbar' : 'navbar';
     
     return (
@@ -70,43 +49,42 @@ function BuyNavbar() {
             <ul className="buy-nav-links">
               <li>
                 <div className="dropdown">
-                <Link to="/" onClick={scrollToAbout}>
-                  Burn Portal
-                </Link>
-                <Link to="/" onClick={scrollToEcosystem}>
-                  Liquidity
-                </Link>
+                <Link to="/">Swap</Link>
+                <Link to="/">Burn Portal</Link>
+                <Link to="/">Liquidity</Link>
                 </div> 
-                <Link to="/" onClick={scrollToHome}>
-                Swap
-              </Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/" onClick={scrollToAbout}>
-                  Burn Portal
-                </Link>
+                <Link to="/">Info</Link>
               </li>
               <li>
-                <Link to="/" onClick={scrollToEcosystem}>
-                  Liquidity
-                </Link>
+                <Link to="/">More</Link>
               </li>
             </ul>
           </div>
+            <div className="buy-navbar-connect">
+              <ul className="buy-network-links">
+                <li>
+                  <div className="network-dropdown">
+                    <Link to="/">Ethereum</Link>
+                    <Link to="/">Polygon</Link>
+                    <Link to="/">BNB Smart Chain</Link>
+                  </div>
+                    <Link to="/">Network</Link>
+                </li>
+              </ul>
+              {account ? (
+                <button type="button" className={`buy-navbar-connect ${isClicked ? 'clicked' : ''}`}>
+                  {account.slice(0, 6) + '...' + account.slice(38, 42)}
+                </button>
+              ) : (
+                <button type="button" className={`buy-navbar-connect ${isClicked ? 'clicked' : ''}`} onClick={connectHandler}>
+                  Connect Wallet
+                </button>
+              )}
+          </div>
         </nav>
-        <div className="buy-navbar-connect-wrapper">
-              <div className="buy-navbar-connect">
-                {account ? (
-                  <button type="button" className="buy-navbar-connect">
-                    {account.slice(0, 6) + '...' + account.slice(38, 42)}
-                  </button>
-                ) : (
-                  <button type="button" className="buy-navbar-connect" onClick={connectHandler}>
-                    Connect
-                  </button>
-                )}
-              </div>
-            </div>
       </nav>
     );
   }

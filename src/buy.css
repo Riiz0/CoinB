@@ -25,14 +25,10 @@ code {
   justify-content: center;
   align-items: center;
   padding: 10px 50px;
-  border-radius: 42px;
-  margin: 10px auto;
-  width: 1100px;
-  position: fixed;
-  max-width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
+  border-radius: 0 0 42px 42px; /* Rounded edges at the top */
+  margin: 0px auto;
+  position: relative;
+  width: 100%;
   z-index: 1000; /* Increase the z-index to ensure it's in front */
 }
 
@@ -41,41 +37,97 @@ code {
   justify-content: center; /* Center the content */
   align-items: center;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
-}
-
-.buy-navbar-connect-wrapper {
-  position: relative;
-  background-color: #0c0b0ab8;
-  padding: 20px 50px;
-  border-radius: 42px;
-  display: flex;
-  align-items: center;
-  margin: 10px 1500px; /* Push the connect button to the right */
 }
 
 .buy-navbar-connect {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   position: relative;
 }
 
 .buy-navbar-connect button {
-  background-color: transparent;
-  border: none;
+  background-color: #9E9E9E;
+  border: 1px solid #212121; /* Add border style */
   color: white;
-  font-size: 21px;
+  font-size: 16px;
   cursor: pointer;
+  padding: 10px 15px;
+  white-space: nowrap;
   font-family: 'Outfit';
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
 }
 
-.buy-navbar-connect-wrapper:hover {
+.buy-network-links{
+  list-style: none;
+  display: flex;
+  margin: 0 65px;
+  font-family: 'Outfit';
+  align-items: center;
+  margin-right: 5px;
+}
+
+.buy-network-links li{
+  margin: 0 15px;
+  position: relative; /* Needed for dropdown positioning */
+}
+
+.buy-network-links li a{
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 16px;
+  padding: 10px 65px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.buy-network-links a:hover{
   background-color: #555555;
 }
+
+.buy-network-links li:hover .network-dropdown{
+  display: flex; /* Display the dropdown when hovering over a list item */
+  flex-direction: column;
+}
+
+.buy-network-links .network-dropdown a{
+  border: transparent;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: block;
+}
+
+.buy-network-links .network-dropdown a:hover{
+  background-color: #555555;
+}
+
+.network-dropdown {
+  position: absolute;
+  top: 155%;
+  left: 0;
+  display: none; /* Hide the dropdown by default */
+  background-color: #0c0b0ab8;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 195px;
+}
+
+.buy-navbar-connect button:hover,
+.buy-navbar-connect button.clicked {
+  background-color: #555555;
+}
+
 
 .buy-logo-title {
   display: flex;
@@ -99,7 +151,7 @@ code {
 .buy-nav-links {
   list-style: none;
   display: flex;
-  gap: 75px;
+  gap: 25px;
   margin: 0 auto;
   padding: 0 auto;
   font-family: 'Outfit';
@@ -107,7 +159,7 @@ code {
 }
 
 .buy-nav-links li {
-  margin: 0;
+  margin: 0 15px;
   position: relative; /* Needed for dropdown positioning */
 }
 
@@ -119,6 +171,7 @@ code {
   padding: 20px;
   border-radius: 8px;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
 .buy-nav-links li a:hover {
