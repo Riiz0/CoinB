@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/chevron-down.css');
 
 body {
   margin: 0;
@@ -24,7 +25,7 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 50px;
+  padding: 10px 30px;
   border-radius: 0 0 42px 42px; /* Rounded edges at the top */
   margin: 0px auto;
   position: relative;
@@ -59,15 +60,16 @@ code {
   font-family: 'Outfit';
   border-radius: 12px;
   transition: background-color 0.3s ease;
+  width: 135px;
 }
 
 .buy-network-links{
   list-style: none;
   display: flex;
-  margin: 0 65px;
+  margin: 0 45px;
   font-family: 'Outfit';
   align-items: center;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .buy-network-links li{
@@ -80,11 +82,12 @@ code {
   text-decoration: none;
   color: white;
   font-weight: normal;
-  font-size: 16px;
-  padding: 10px 35px;
+  font-size: 14px;
+  padding: 10px 20px;
   border-radius: 12px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
+  width: 135px;
 }
 
 .buy-network-links a:hover{
@@ -102,9 +105,12 @@ code {
   text-decoration: none;
   color: white;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   transition: background-color 0.3s ease;
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .buy-network-links .network-dropdown a:hover{
@@ -113,7 +119,7 @@ code {
 
 .network-dropdown {
   position: absolute;
-  top: 155%;
+  top: 100%;
   left: 0;
   display: none; /* Hide the dropdown by default */
   background-color: #0c0b0ab8;
@@ -161,7 +167,9 @@ background-color: #212121
 
 .buy-nav-links li {
   margin: 0 15px;
-  position: relative; /* Needed for dropdown positioning */
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .buy-nav-links li a {
@@ -181,7 +189,7 @@ background-color: #212121
 
 .dropdown {
   position: absolute;
-  top: 180%;
+  top: 100%;
   left: 0;
   display: none; /* Hide the dropdown by default */
   background-color: #0c0b0ab8;
@@ -219,6 +227,49 @@ background-color: #212121
   padding: 0 20px;
   border-radius: 42px;
   z-index: 1000; /* Ensure the navbar appears above other content */
+}
+
+.gg-chevron-down {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  color: white;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px
+ }
+ 
+ .gg-chevron-down::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  left: 4px;
+  top: 3px
+ }
+
+ .home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 21px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.home-link i {
+  margin-left: 2px; /* Adjust the spacing between "Home" and the arrow icon */
 }
 
 /* 

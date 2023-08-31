@@ -102,7 +102,7 @@ const handleNetworkChange = async (selectedOption) => {
                 <Link to="/BurnPortal">Burn Portal</Link>
                 <Link to="/Liquidity">Liquidity</Link>
                 </div> 
-                <Link to="/Buy">Home</Link>
+                <Link to="/Buy" className="home-link"> Home <i class="gg-chevron-down"></i></Link>
               </li>
               <li>
                 <Link to="/NFTs">NFT's</Link>
@@ -125,7 +125,7 @@ const handleNetworkChange = async (selectedOption) => {
                     </a>
                   ))}
                   </div>
-                    <a>{selectedNetwork}</a>
+                    <a className="home-link">{selectedNetwork} <i class="gg-chevron-down"></i></a>
                 </li>
               </ul>
               {account ? (
