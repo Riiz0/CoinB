@@ -94,7 +94,7 @@ code {
   background-color: #555555;
 }
 
-.buy-network-links li:hover .network-dropdown{
+.buy-network-links li:hover .network-dropdown {
   display: flex; /* Display the dropdown when hovering over a list item */
   flex-direction: column;
 }
@@ -127,6 +127,22 @@ code {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   width: 195px;
+}
+
+.network-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.network-button:hover {
+  background-color: #555555;
 }
 
 .buy-navbar-connect button:hover {
@@ -183,7 +199,7 @@ background-color: #212121
   white-space: nowrap;
 }
 
-.buy-nav-links li a:hover {
+.buy-nav-links li a:hover{
   background-color: #555555;
 }
 
@@ -202,20 +218,6 @@ background-color: #212121
 .buy-nav-links li:hover .dropdown {
   display: flex; /* Display the dropdown when hovering over a list item */
   flex-direction: column;
-}
-
-.buy-nav-links .dropdown a {
-  padding: 10px 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: normal;
-  font-size: 21px;
-  transition: background-color 0.3s ease;
-  display: block;
-}
-
-.buy-nav-links .dropdown a:hover {
-  background-color: #555555;
 }
 
 .buy-fixed-navbar {
@@ -268,10 +270,28 @@ background-color: #212121
   white-space: nowrap;
 }
 
+.network-home-link{
+display: flex;
+align-items: center;
+text-decoration: none;
+color: white;
+font-weight: normal;
+font-size: 14px;
+border: 1px solid white;
+padding: 10px 20px;
+border-radius: 12px;
+transition: background-color 0.3s ease;
+white-space: nowrap;
+width: 135px;
+}
+
+.network-home-link:hover{
+  background-color: #555555;
+}
+
 .home-link i {
   margin-left: 2px; /* Adjust the spacing between "Home" and the arrow icon */
 }
-
 /* 
 ///////////////////////////////////////////////////////Main Content
 */

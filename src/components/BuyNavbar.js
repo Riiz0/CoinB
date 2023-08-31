@@ -56,8 +56,6 @@ const handleNetworkChange = async (selectedOption) => {
       params: [{ chainId: chainIdHex }],
     });
 
-    const network = await window.ethereum.request({ method: 'eth_chainId' });
-
     // Find the correct display name from networkOptions using the selected chain ID
     const selectedNetworkData = networkOptions.find(option => option.chainId === selectedOption.chainId);
     if (selectedNetworkData) {
@@ -102,7 +100,7 @@ const handleNetworkChange = async (selectedOption) => {
                 <Link to="/BurnPortal">Burn Portal</Link>
                 <Link to="/Liquidity">Liquidity</Link>
                 </div> 
-                <Link to="/Buy" className="home-link"> Home <i class="gg-chevron-down"></i></Link>
+                <Link to="/Buy" className="home-link"> Home <i className="gg-chevron-down"></i></Link>
               </li>
               <li>
                 <Link to="/NFTs">NFT's</Link>
@@ -117,15 +115,12 @@ const handleNetworkChange = async (selectedOption) => {
                 <li>
                   <div className="network-dropdown">
                   {networkOptions.map((option) => (
-                    <a
-                      key={option.id}
-                      onClick={() => handleNetworkChange(option)}
-                    >
+                    <div className="network-button" key={option.id} onClick={() => handleNetworkChange(option)}>
                       {option.name}
-                    </a>
+                    </div>
                   ))}
                   </div>
-                    <a className="home-link">{selectedNetwork} <i class="gg-chevron-down"></i></a>
+                    <div className="network-home-link">{selectedNetwork} <i className="gg-chevron-down"></i></div>
                 </li>
               </ul>
               {account ? (
