@@ -4,6 +4,7 @@ import { ethers } from 'ethers';
 
 //Imports
 import logo from '../assets/logo.png'
+import networkOptions from './Networks'
 
 function BuyNavbar() {
   const [scrolling, setScrolling] = useState(false);
@@ -18,24 +19,59 @@ function BuyNavbar() {
       setAccountState(connectedAccount); // Use the state variable here
       setIsClicked(true);
 
-      //Get And Set Connected Blockchain Network
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      const network = await provider.getNetwork();
-      setSelectedNetwork(network.name);
-    } catch (error) {
-      console.error('Error connecting to MetaMask:', error);
-    }
-  };
+    //Get And Set Connected Blockchain Network
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const network = await provider.getNetwork();
 
-  const networkOptions = [
-    { name: 'Ethereum', id: 1 },
-    { name: 'Polygon', id: 2 },
-    { name: 'BNB Smart Chain', id: 3 },
-  ];
-  
-  const handleNetworkChange = (selectedOption) => {
-    setSelectedNetwork(selectedOption.name);
-  };
+    console.log('Network name from provider:', network.name);
+    console.log('Network ID from provider:', network.chainId);
+
+    // Map network names if necessary
+    let displayNetworkName = network.name;
+    if (network.name === 'mainnet'){
+      displayNetworkName = 'Ethereum Mainnet'
+    } else if (network.name === 'sepolia'){
+      displayNetworkName = 'Sepolia Testnet'
+    } else if (network.name === 'matic'){
+      displayNetworkName = 'Polygon Mainnet';
+    } else if (network.name === 'matic-mumbai'){
+      displayNetworkName = 'Mumbai Testnet';
+    }
+    // Add more mappings for other networks if needed
+
+    setSelectedNetwork(displayNetworkName);
+  } catch (error) {
+    console.error('Error connecting to MetaMask:', error);
+  }
+};
+
+const handleNetworkChange = async (selectedOption) => {
+  try {
+    let chainIdHex = selectedOption.chainId.toString(16);
+
+    // Add leading '0'x if missing
+    if (!chainIdHex.startsWith('0x')) {
+      chainIdHex = '0x' + chainIdHex;
+    }
+
+    await window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{ chainId: chainIdHex }],
+    });
+
+    const network = await window.ethereum.request({ method: 'eth_chainId' });
+
+    // Find the correct display name from networkOptions using the selected chain ID
+    const selectedNetworkData = networkOptions.find(option => option.chainId === selectedOption.chainId);
+    if (selectedNetworkData) {
+      setSelectedNetwork(selectedNetworkData.name); // Set the display name
+    } else {
+      setSelectedNetwork('Select Network'); // Fallback in case the network data is not found
+    }
+  } catch (error) {
+    console.error('Error switching network:', error);
+  }
+};
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -84,16 +120,15 @@ function BuyNavbar() {
                 <li>
                   <div className="network-dropdown">
                   {networkOptions.map((option) => (
-                    <Link
+                    <a
                       key={option.id}
-                      to="/"
                       onClick={() => handleNetworkChange(option)}
                     >
                       {option.name}
-                    </Link>
+                    </a>
                   ))}
                   </div>
-                    <Link to="/">{selectedNetwork}</Link>
+                    <a>{selectedNetwork}</a>
                 </li>
               </ul>
               {account ? (
