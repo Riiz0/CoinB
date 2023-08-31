@@ -4,7 +4,6 @@ import React from 'react';
 import '.././buy.css'
 
 function Buy() {
-
   return (
     <div name="buy" className="buy-body-top-section">
       {/* Main Content */}

@@ -9,6 +9,11 @@ import Navbar from './Navbar';
 import SideBarMenu from './SideBarMenu';
 import Buy from './Buy';
 import BuyNavbar from './BuyNavbar';
+import Swap from './BuyPage Sections/Swap';
+import BurnPortal from './BuyPage Sections/BurnPortal'
+import Liquidity from './BuyPage Sections/Liquidity'
+import NFTs from './BuyPage Sections/NFTs'
+import More from './BuyPage Sections/More'
 
 function App({ pathname }) {
   const [isLoading, setLoading] = useState(true);
@@ -23,6 +28,11 @@ function App({ pathname }) {
             <Routes>
               <Route path="/" element={<HomeScreen setLoading={setLoading} />} />
               <Route path="/Buy" element={<Buy setLoading={setLoading} />} />
+              <Route path="/Swap" element={<Swap />} />
+              <Route path="/BurnPortal" element={<BurnPortal />} />
+              <Route path="/Liquidity" element={<Liquidity />} />
+              <Route path="/NFTs" element={<NFTs />} />
+              <Route path="/More" element={<More />} />
               {/* Other routes */}
             </Routes>
           </div>

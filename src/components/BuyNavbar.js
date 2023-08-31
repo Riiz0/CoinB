@@ -23,9 +23,6 @@ function BuyNavbar() {
     const provider = new ethers.BrowserProvider(window.ethereum);
     const network = await provider.getNetwork();
 
-    console.log('Network name from provider:', network.name);
-    console.log('Network ID from provider:', network.chainId);
-
     // Map network names if necessary
     let displayNetworkName = network.name;
     if (network.name === 'mainnet'){
@@ -108,7 +105,7 @@ const handleNetworkChange = async (selectedOption) => {
                 <Link to="/Buy">Home</Link>
               </li>
               <li>
-                <Link to="/Info">Info</Link>
+                <Link to="/NFTs">NFT's</Link>
               </li>
               <li>
                 <Link to="/More">More</Link>
