@@ -1,8 +1,10 @@
+
 const networkOptions = [
     {
       name: 'Ethereum Mainnet',
       id: 1,
       chainId: 1,
+      type: 'mainnet',
       chainData: {
         name: 'Ethereum Mainnet',
         nativeCurrencyName: 'Ether',
@@ -12,21 +14,10 @@ const networkOptions = [
       },
     },
     {
-        name: 'Sepolia Testnet',
-        id: 2,
-        chainId: 11155111,
-        chainData: {
-          name: 'Sepolia Testnet',
-          nativeCurrencyName: 'SepoliaETH',
-          nativeCurrencySymbol: 'SepoliaETH',
-          rpcUrl: `https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_PROJECT_ID_ETH_TEST}`,
-          blockExplorerUrl: 'https://sepolia.etherscan.io',
-        },
-      },
-    {
       name: 'Polygon Mainnet',
-      id: 3,
+      id: 2,
       chainId: 137,
+      type: 'mainnet',
       chainData: {
         name: 'Polygon Mainnet',
         nativeCurrencyName: 'MATIC',
@@ -36,9 +27,23 @@ const networkOptions = [
       },
     },
     {
+        name: 'Sepolia Testnet',
+        id: 3,
+        chainId: 11155111,
+        type: 'testnet',
+        chainData: {
+          name: 'Sepolia Testnet',
+          nativeCurrencyName: 'SepoliaETH',
+          nativeCurrencySymbol: 'SepoliaETH',
+          rpcUrl: `https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_PROJECT_ID_ETH_TEST}`,
+          blockExplorerUrl: 'https://sepolia.etherscan.io',
+        },
+      },
+    {
     name: 'Mumbai Testnet',
     id: 4,
     chainId: 80001,
+    type: 'testnet',
     chainData: {
       name: 'Mumbai Testnet',
       nativeCurrencyName: 'MATIC',

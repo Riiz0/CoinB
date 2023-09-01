@@ -5,6 +5,9 @@ import { ethers } from 'ethers';
 //Imports
 import logo from '../assets/logo.png'
 import networkOptions from './Networks'
+import EthereumLogo from '../assets/Ethereum.png';
+import PolygonLogo from '../assets/Polygon.png';
+import TestnetLogo from '../assets/Testnet.png'
 
 function BuyNavbar() {
   const [scrolling, setScrolling] = useState(false);
@@ -27,10 +30,10 @@ function BuyNavbar() {
     let displayNetworkName = network.name;
     if (network.name === 'mainnet'){
       displayNetworkName = 'Ethereum Mainnet'
+    } else if (network.name === 'matic'){
+      displayNetworkName = 'Polygon Mainnet'; 
     } else if (network.name === 'sepolia'){
       displayNetworkName = 'Sepolia Testnet'
-    } else if (network.name === 'matic'){
-      displayNetworkName = 'Polygon Mainnet';
     } else if (network.name === 'matic-mumbai'){
       displayNetworkName = 'Mumbai Testnet';
     }
@@ -114,12 +117,29 @@ const handleNetworkChange = async (selectedOption) => {
               <ul className="buy-network-links">
                 <li>
                   <div className="network-dropdown">
-                  {networkOptions.map((option) => (
-                    <div className="network-button" key={option.id} onClick={() => handleNetworkChange(option)}>
-                      {option.name}
-                    </div>
-                  ))}
+                    <div className="network-group">
+                      <p>Mainnets:</p>
+                      {networkOptions
+                        .filter((option) => option.type === 'mainnet')
+                        .map((option) => (
+                        <div className="network-button" key={option.id} onClick={() => handleNetworkChange(option)}>
+                           <img src={option.name === 'Ethereum Mainnet' ? EthereumLogo : PolygonLogo} alt={option.name} className="network-logo" />
+                          {option.name}
+                        </div>
+                      ))}
                   </div>
+                  <div className="network-group">
+                    <p>Testnets:</p>
+                    {networkOptions
+                      .filter((option) => option.type === 'testnet')
+                      .map((option) => (
+                        <div className="network-button" key={option.id} onClick={() => handleNetworkChange(option)}>
+                            <img src={option.name === 'Sepolia Testnet' ? TestnetLogo : TestnetLogo} alt={option.name} className="network-logo" />
+                          {option.name}
+                          </div>
+                      ))}
+                      </div>  
+                    </div>
                     <div className="network-home-link">{selectedNetwork} <i className="gg-chevron-down"></i></div>
                 </li>
               </ul>

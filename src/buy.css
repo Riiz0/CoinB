@@ -60,7 +60,6 @@ code {
   font-family: 'Outfit';
   border-radius: 12px;
   transition: background-color 0.3s ease;
-  width: 135px;
 }
 
 .buy-network-links{
@@ -77,6 +76,25 @@ code {
   position: relative; /* Needed for dropdown positioning */
 }
 
+.network-home-link{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 14px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  width: 145px;
+}
+
+.network-home-link:hover{
+  background-color: #555555;
+}
+
 .buy-network-links li a{
   border: 1px solid white;
   text-decoration: none;
@@ -87,7 +105,6 @@ code {
   border-radius: 12px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-  width: 135px;
 }
 
 .buy-network-links a:hover{
@@ -117,6 +134,35 @@ code {
   background-color: #555555;
 }
 
+.network-group {
+  margin: 0px 5px;
+  color: white;
+}
+
+.network-group p {
+  font-weight: bold;
+  font-size: 16px; 
+  margin-bottom: 2px; 
+  margin-left: 2px;
+  border-bottom: 1px solid white;
+}
+
+.network-group .network-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px 25px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.network-group .network-button:hover {
+  background-color: #555555;
+}
+
 .network-dropdown {
   position: absolute;
   top: 100%;
@@ -126,7 +172,7 @@ code {
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  width: 195px;
+  width: 185px;
 }
 
 .network-button {
@@ -135,10 +181,20 @@ code {
   color: white;
   font-size: 14px;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 10px 20px 10px 30px;
   border-radius: 12px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
+  position: relative; 
+}
+
+.network-logo {
+  position: absolute;
+  left: 0px; /* Adjust the left position to align the logo */
+  top: 50%; /* Position it vertically in the middle */
+  transform: translateY(-50%); /* Center the logo vertically */
+  width: 20px; /* Adjust the width of the logo */
+  height: 20px; /* Adjust the height of the logo */
 }
 
 .network-button:hover {
@@ -253,8 +309,8 @@ background-color: #212121
   border-bottom: 2px solid;
   border-right: 2px solid;
   transform: rotate(45deg);
-  left: 4px;
-  top: 3px
+  left: 5px;
+  top: 4px
  }
 
  .home-link {
@@ -268,25 +324,6 @@ background-color: #212121
   border-radius: 8px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-}
-
-.network-home-link{
-display: flex;
-align-items: center;
-text-decoration: none;
-color: white;
-font-weight: normal;
-font-size: 14px;
-border: 1px solid white;
-padding: 10px 20px;
-border-radius: 12px;
-transition: background-color 0.3s ease;
-white-space: nowrap;
-width: 135px;
-}
-
-.network-home-link:hover{
-  background-color: #555555;
 }
 
 .home-link i {
