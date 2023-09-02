@@ -65,14 +65,13 @@ code {
 .buy-network-links{
   list-style: none;
   display: flex;
-  margin: 0 45px;
+  margin: 0 95px;
   font-family: 'Outfit';
   align-items: center;
   margin-right: 10px;
 }
 
 .buy-network-links li{
-  margin: 0 15px;
   position: relative; /* Needed for dropdown positioning */
 }
 
@@ -84,27 +83,15 @@ code {
   font-weight: normal;
   font-size: 14px;
   border: 1px solid white;
-  padding: 10px 20px;
+  padding: 6.5px 0px 6.5px 30px;
   border-radius: 12px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-  width: 145px;
+  width: 155px;
 }
 
 .network-home-link:hover{
   background-color: #555555;
-}
-
-.buy-network-links li a{
-  border: 1px solid white;
-  text-decoration: none;
-  color: white;
-  font-weight: normal;
-  font-size: 14px;
-  padding: 10px 20px;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
 }
 
 .buy-network-links a:hover{
@@ -153,7 +140,7 @@ code {
   color: white;
   font-size: 14px;
   cursor: pointer;
-  padding: 10px 25px;
+  padding: 10px 30px;
   border-radius: 12px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
@@ -190,7 +177,7 @@ code {
 
 .network-logo {
   position: absolute;
-  left: 0px; /* Adjust the left position to align the logo */
+  left: 5px; /* Adjust the left position to align the logo */
   top: 50%; /* Position it vertically in the middle */
   transform: translateY(-50%); /* Center the logo vertically */
   width: 20px; /* Adjust the width of the logo */
@@ -332,10 +319,6 @@ background-color: #212121
 /* 
 ///////////////////////////////////////////////////////Main Content
 */
-.buy-main-content {
-  flex-grow: 1; /* Expand to fill available space */
-}
-
 .buy-body-top-section {
   display: flex;
   justify-content: left;
@@ -348,40 +331,63 @@ background-color: #212121
   position: relative; /* Add relative positioning to the container */
 }
 
-.buy-background-container {
-  position: relative;
-  width: 100%;
-  height: 100%; /* Set a fixed height */
-  overflow: hidden;
-  background-image: url('./assets/CONTAINER1.PNG');
-  background-size: cover; /* Adjust the background size to fully cover the container */
-  background-repeat: no-repeat;
-  background-position: center center;
-  border-radius: 42px; /* Add rounded corners to the background container */
-}
-
-.buy-background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.buy-about-container {
-  margin-top: 70px;
-  width: 100%;
-  height: 567.5px;
-  border-radius: 42px;
-  background-color: transparent;
-  border: 2px solid #0c0b0ab8;
+.buy-main-content {
+  flex-grow: 1; /* Expand to fill available space */
   display: flex;
-  justify-content: left;
-  align-items: left;
-  position: relative; /* Add relative positioning */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  border-radius: 42px;
+  margin: 40px auto; /* Add margin to center the section and create distance from top */
+  width: 80%; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  position: relative; /* Add relative positioning to the container */
+}
+
+/* Splide Slider Container */
+.splide-container {
+  border-radius: 20px; /* Add rounded corners to the slider container */
   overflow: hidden; /* Hide overflowing content */
+  width: 70%; /* Adjust the width as needed */
+}
+
+/* Updated Splide Slider Styles */
+.splide {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f4f4f4; /* Change the background color */
+}
+
+.splide__track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.splide__slide {
+  flex: 0 0 auto;
+  margin-right: 10px; /* Adjust the margin between slides */
+  padding: 10px; /* Adjust the padding around each slide */
+  min-width: 64px; /* Adjust the slide width as needed */
+  text-align: center;
+  list-style: none; /* Remove bullet points */
+  background-color: #fff; /* Change the background color of each slide */
+  border-radius: 12px; /* Add border radius to slides */
+}
+
+.splide__slide img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 12px; /* Add border and border radius to images */
+  padding: 20px; /* Add padding to images */
+}
+
+/* Image Thumbnails Container */
+.image-thumbnails {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 20px; /* Adjust the margin as needed */
 }
 
 @media (max-width: 1400px) {

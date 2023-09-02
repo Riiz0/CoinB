@@ -140,7 +140,32 @@ const handleNetworkChange = async (selectedOption) => {
                       ))}
                       </div>  
                     </div>
-                    <div className="network-home-link">{selectedNetwork} <i className="gg-chevron-down"></i></div>
+                    <div className="network-home-link">
+                      {selectedNetwork === 'Ethereum Mainnet' ? (
+                        <>
+                          <img src={EthereumLogo} alt="Ethereum Logo" className="network-logo" />
+                          Ethereum Mainnet
+                        </>
+                      ) : selectedNetwork === 'Polygon Mainnet' ? (
+                        <>
+                          <img src={PolygonLogo} alt="Polygon Logo" className="network-logo" />
+                          Polygon Mainnet
+                        </>
+                      ) : selectedNetwork === 'Sepolia Testnet' ? (
+                        <>
+                          <img src={TestnetLogo} alt="Testnet Logo" className="network-logo" />
+                          Sepolia Testnet
+                        </>
+                      ) : selectedNetwork === 'Mumbai Testnet' ? (
+                        <>
+                          <img src={TestnetLogo} alt="Testnet Logo" className="network-logo" />
+                          Mumbai Testnet
+                        </>
+                      ) : (
+                        selectedNetwork
+                      )}{' '}
+                      <i className="gg-chevron-down"></i>
+                    </div>
                 </li>
               </ul>
               {account ? (
