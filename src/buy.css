@@ -321,13 +321,13 @@ background-color: #212121
 */
 .buy-body-top-section {
   display: flex;
+  background-color: transparent;
   justify-content: left;
   align-items: left;
-  border-radius: 42px;
+  border-radius: 0px;
   margin: 40px auto; /* Add margin to center the section and create distance from top */
-  width: 1150px;
+  width: 100%; /* Set the width to 100% to fill the container */
   height: 1075px; /* Adjust the height as needed */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   position: relative; /* Add relative positioning to the container */
 }
 
@@ -336,9 +336,10 @@ background-color: #212121
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  border-radius: 42px;
-  margin: 40px auto; /* Add margin to center the section and create distance from top */
-  width: 80%; /* Adjust the width as needed */
+  border-radius: 0px;
+  margin: 0px; /* Remove margin to allow full-width */
+  margin-top: 20px;
+  width: 100%; /* Set the width to 100% to fill the container */
   height: auto; /* Adjust the height as needed */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   position: relative; /* Add relative positioning to the container */
@@ -346,9 +347,10 @@ background-color: #212121
 
 /* Splide Slider Container */
 .splide-container {
-  border-radius: 20px; /* Add rounded corners to the slider container */
+  border-radius: 0px; /* Add rounded corners to the slider container */
   overflow: hidden; /* Hide overflowing content */
-  width: 70%; /* Adjust the width as needed */
+  width: 85%; /* Adjust the width as needed */
+  height: 100%;
 }
 
 /* Updated Splide Slider Styles */
@@ -363,23 +365,28 @@ background-color: #212121
   transition: transform 0.3s ease-in-out;
 }
 
+/* Splide Slider Styles */
 .splide__slide {
   flex: 0 0 auto;
-  margin-right: 10px; /* Adjust the margin between slides */
-  padding: 10px; /* Adjust the padding around each slide */
-  min-width: 64px; /* Adjust the slide width as needed */
+  margin-right: 0px; /* Adjust the margin between slides */
+  padding: 55px 0; /* Add padding to the top and bottom of each slide */
+  min-width: 100px; /* Set the slide width as needed */
   text-align: center;
   list-style: none; /* Remove bullet points */
-  background-color: #fff; /* Change the background color of each slide */
-  border-radius: 12px; /* Add border radius to slides */
+  background-color: transparent; /* Remove background color */
+  border-radius: 0; /* Remove border radius */
+
+  /* Center the content both horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .splide__slide img {
-  max-width: 100%;
-  height: auto;
+  width: 512px;
+  height: 512px;
+  object-fit: contain; /* Maintain the aspect ratio and fit the image within the container */
   border: 1px solid #ccc;
-  border-radius: 12px; /* Add border and border radius to images */
-  padding: 20px; /* Add padding to images */
 }
 
 /* Image Thumbnails Container */
@@ -388,6 +395,31 @@ background-color: #212121
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   margin-top: 20px; /* Adjust the margin as needed */
+}
+
+/* Navigation Dots */
+.splide__pagination {
+  position: absolute !important;
+  bottom: 20px !important; /* Adjust the distance from the bottom */
+  left: 0 !important;
+  right: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.splide__pagination__page {
+  width: 12px !important; /* Adjust the width of each dot */
+  height: 12px !important; /* Adjust the height of each dot */
+  margin: 0 6px !important; /* Adjust the margin between dots */
+  background-color: #000000 !important; /* Default dot color */
+  border-radius: 50% !important; /* Make dots circular */
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important; /* Smooth transition for the dot color change */
+}
+
+/* Style for the active dot */
+.splide__pagination__page.splide__pagination__page--active {
+  background-color: #007bff !important; /* Active dot color */
 }
 
 @media (max-width: 1400px) {

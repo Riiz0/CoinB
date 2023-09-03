@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 // Import your images
 import '../buy.css'; // Your CSS import
@@ -48,15 +49,14 @@ function Buy() {
                 {/* Add more slides with images */}
               </ul>
             </div>
+            <div className="splide__pagination">
+    {/* Pagination dots will be added here automatically */}
+  </div>
           </div>
-        </div>
-  
-        {/* Image Thumbnails Container */}
-        <div className="image-thumbnails">
-          {/* Add your image thumbnails here */}
         </div>
       </div>
     </div>
   );
 }
+
 export default Buy;
