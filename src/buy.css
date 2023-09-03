@@ -362,31 +362,31 @@ background-color: #212121
 
 .splide__track {
   display: flex;
+  justify-content: flex-start;
   transition: transform 0.3s ease-in-out;
 }
 
 /* Splide Slider Styles */
+
 .splide__slide {
   flex: 0 0 auto;
-  margin-right: 0px; /* Adjust the margin between slides */
   padding: 55px 0; /* Add padding to the top and bottom of each slide */
-  min-width: 100px; /* Set the slide width as needed */
+  min-width: 100px;
   text-align: center;
   list-style: none; /* Remove bullet points */
   background-color: transparent; /* Remove background color */
   border-radius: 0; /* Remove border radius */
-
-  /* Center the content both horizontally and vertically */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .splide__slide img {
-  width: 512px;
-  height: 512px;
+  width: 100%;
+  height: 100%;
   object-fit: contain; /* Maintain the aspect ratio and fit the image within the container */
   border: 1px solid #ccc;
+  margin-right: 100px;
 }
 
 /* Image Thumbnails Container */

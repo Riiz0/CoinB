@@ -7,6 +7,8 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import '../buy.css'; // Your CSS import
 import Image1 from '../assets/PlaceHolder_Image.png';
 import Image2 from '../assets/PlaceHolder_Image2.png';
+import Image3 from '../assets/PlaceHolder_Image3.png';
+import Image4 from '../assets/PlaceHolder_Image4.png'
 import '@splidejs/react-splide/css';
 
 function Buy() {
@@ -18,7 +20,7 @@ function Buy() {
       focus: 'center',
       perPage: 3,
       autoScroll: {
-        speed: -1,
+        speed: 1,
       },
     });
 
@@ -45,6 +47,12 @@ function Buy() {
                 </li>
                 <li className="splide__slide">
                   <img src={Image2} alt="Product 2" />
+                </li>
+                <li className="splide__slide">
+                  <img src={Image3} alt="Product 3" />
+                </li>
+                <li className="splide__slide">
+                  <img src={Image4} alt="Product 4" />
                 </li>
                 {/* Add more slides with images */}
               </ul>
