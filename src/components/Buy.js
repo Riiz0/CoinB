@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import '@splidejs/react-splide/css';
 
 // Import your images
 import '../buy.css'; // Your CSS import
@@ -10,19 +11,20 @@ import Image2 from '../assets/PlaceHolder_Image2.png';
 import Image3 from '../assets/PlaceHolder_Image3.png';
 import Image4 from '../assets/PlaceHolder_Image4.png'
 import Image5 from '../assets/PlaceHolder_Image2.png'
-import '@splidejs/react-splide/css';
 
 function Buy() {
+
   useEffect(() => {
     // Initialize Splide with AutoScroll when the component mounts.
     const splide = new Splide('.splide', {
       type: 'loop',
       drag: 'free',
-      focus: 'center',
+      focus: 'left',
       perPage: 3,
       autoScroll: {
         speed: 1,
       },
+      rewind: true,
     });
 
     // Use the AutoScroll extension.
@@ -72,10 +74,24 @@ function Buy() {
               </ul>
             </div>
             <div className="splide__pagination">
-    {/* Pagination dots will be added here automatically */}
-  </div>
+              {/* Pagination dots will be added here automatically */}
+            </div>
           </div>
         </div>
+      </div>
+      
+      {/* Container below Splide for additional content */}
+      <div className="buy-mid-container">
+        {/* Add your content here */}
+        <h2>Additional Content Container</h2>
+        <p>This is where you can add more content below the Splide slider.</p>
+      </div>
+
+      {/* Container below the additional content */}
+      <div className="buy-bottom-container">
+        {/* Add your content here */}
+        <h2>Bottom Content Container</h2>
+        <p>This is where you can add even more content below the additional content container.</p>
       </div>
     </div>
   );

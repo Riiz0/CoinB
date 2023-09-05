@@ -321,13 +321,14 @@ background-color: #212121
 */
 .buy-body-top-section {
   display: flex;
+  flex-direction: column;  
   background-color: transparent;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   border-radius: 0px;
   margin: 40px auto; /* Add margin to center the section and create distance from top */
   width: 100%; /* Set the width to 100% to fill the container */
-  height: 1075px; /* Adjust the height as needed */
+  height: auto; /* Adjust the height as needed */
   position: relative; /* Add relative positioning to the container */
 }
 
@@ -447,6 +448,32 @@ background-color: #212121
     margin-right: 150px; /* Adjust this margin for smaller screens */
   }
 }
+
+
+/* 
+///////////////////////////////////Mid Container 
+*/
+.buy-mid-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 80px;
+  width: 100%; /* Stretch to full width */
+  max-width: 1200px; /* Set a maximum width if needed */
+  height: 750px;
+}
+
+/* 
+///////////////////////////////////Bottom Container 
+*/
+.buy-bottom-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 80px;
+  width: 100%; /* Stretch to full width */
+  max-width: 1200px; /* Set a maximum width if needed */
+  height: 750px;
+}
+
 
 /* Add more media queries as needed for different screen sizes */
 @media (max-width: 1280px) {
