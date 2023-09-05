@@ -366,12 +366,11 @@ background-color: #212121
   transition: transform 0.3s ease-in-out;
 }
 
-/* Splide Slider Styles */
-
 .splide__slide {
   flex: 0 0 auto;
-  padding: 55px 0; /* Add padding to the top and bottom of each slide */
-  min-width: 100px;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  max-width: 850px;
   text-align: center;
   list-style: none; /* Remove bullet points */
   background-color: transparent; /* Remove background color */
@@ -381,12 +380,32 @@ background-color: #212121
   align-items: center;
 }
 
+.splide__slide a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline from anchor tags */
+}
+
 .splide__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Maintain the aspect ratio and fit the image within the container */
+  width: 700px; /* Let the width adjust proportionally */
+  height: 700px; /* Set your desired height */
+  object-fit: contain; /* Maintain aspect ratio */
   border: 1px solid #ccc;
-  margin-right: 100px;
+  border-radius: 42px;
+}
+
+.splide__slide img:hover {
+  border-color: #FFC8DD;
+}
+
+/* CSS for the pop effect */
+.pop-effect img {
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Add transitions for smooth animation */
+}
+
+.pop-effect img:hover {
+  border-color: #FFC8DD; /* Border color for the hovered image */
+  transform: scale(1.1); /* Enlarge the image on hover */
 }
 
 /* Image Thumbnails Container */

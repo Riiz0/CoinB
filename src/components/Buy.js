@@ -9,6 +9,7 @@ import Image1 from '../assets/PlaceHolder_Image.png';
 import Image2 from '../assets/PlaceHolder_Image2.png';
 import Image3 from '../assets/PlaceHolder_Image3.png';
 import Image4 from '../assets/PlaceHolder_Image4.png'
+import Image5 from '../assets/PlaceHolder_Image2.png'
 import '@splidejs/react-splide/css';
 
 function Buy() {
@@ -42,17 +43,30 @@ function Buy() {
           <div className="splide">
             <div className="splide__track">
               <ul className="splide__list">
-                <li className="splide__slide">
+                <li className="splide__slide pop-effect">
+                <a href="/Swap"> {/* Add your destination URL here */}
                   <img src={Image1} alt="Product 1" />
+                  </a>
                 </li>
-                <li className="splide__slide">
+                <li className="splide__slide pop-effect">
+                <a href="/BurnPortal"> {/* Add your destination URL here */}
                   <img src={Image2} alt="Product 2" />
+                  </a>
                 </li>
-                <li className="splide__slide">
+                <li className="splide__slide pop-effect">
+                <a href="/Liquidity"> {/* Add your destination URL here */}
                   <img src={Image3} alt="Product 3" />
+                  </a>
                 </li>
-                <li className="splide__slide">
+                <li className="splide__slide pop-effect">
+                <a href="/NFTs"> {/* Add your destination URL here */}
                   <img src={Image4} alt="Product 4" />
+                  </a>
+                </li>
+                <li className="splide__slide pop-effect">
+                <a href="/More"> {/* Add your destination URL here */}
+                  <img src={Image5} alt="Product 5" />
+                  </a>
                 </li>
                 {/* Add more slides with images */}
               </ul>
