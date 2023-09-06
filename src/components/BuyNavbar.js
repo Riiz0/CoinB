@@ -99,17 +99,17 @@ const handleNetworkChange = async (selectedOption) => {
             <ul className="buy-nav-links">
               <li>
                 <div className="dropdown">
-                <Link to="/Swap">Swap</Link>
-                <Link to="/BurnPortal">Burn Portal</Link>
-                <Link to="/Liquidity">Liquidity</Link>
+                <Link to="/Buy/Swap">Swap</Link>
+                <Link to="/Buy/BurnPortal">Burn Portal</Link>
+                <Link to="/Buy/Liquidity">Liquidity</Link>
                 </div> 
                 <Link to="/Buy" className="home-link"> Home <i className="gg-chevron-down"></i></Link>
               </li>
               <li>
-                <Link to="/NFTs">NFT's</Link>
+                <Link to="/Buy/NFTs">NFT's</Link>
               </li>
               <li>
-                <Link to="/More">More</Link>
+                <Link to="/Buy/More">More</Link>
               </li>
             </ul>
           </div>

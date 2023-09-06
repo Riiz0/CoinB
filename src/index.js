@@ -1,14 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client'; // Correct import path
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import './buy.css'
+import './buy.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root')); // Use createRoot directly
 root.render(
   <React.StrictMode>
-    <App pathname={window.location.pathname} /> {/* Pass the pathname */}
+    <BrowserRouter>
+      <App pathname={window.location.pathname} />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
