@@ -6,11 +6,11 @@ import '@splidejs/react-splide/css';
 
 // Import your images
 import '../buy.css'; // Your CSS import
-import Image1 from '../assets/PlaceHolder_Image.png';
+import Image1 from '../assets/Swap_1.png';
 import Image2 from '../assets/PlaceHolder_Image2.png';
 import Image3 from '../assets/PlaceHolder_Image3.png';
-import Image4 from '../assets/PlaceHolder_Image4.png';
-import Image5 from '../assets/PlaceHolder_Image2.png';
+import Image4 from '../assets/Swap_1.png';
+import Image5 from '../assets/PlaceHolder_Image4.png';
 
 function Buy() {
   useEffect(() => {
