@@ -342,13 +342,12 @@ background-color: #212121
   margin-top: 20px;
   width: 100%; /* Set the width to 100% to fill the container */
   height: auto; /* Adjust the height as needed */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
   position: relative; /* Add relative positioning to the container */
 }
 
 /* Splide Slider Container */
 .splide-container {
-  border-radius: 0px; /* Add rounded corners to the slider container */
+  border-radius: 25px; /* Add rounded corners to the slider container */
   overflow: hidden; /* Hide overflowing content */
   width: 85%; /* Adjust the width as needed */
   height: 100%;

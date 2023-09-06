@@ -17,7 +17,6 @@ import More from './BuyPage Sections/More'
 
 function App({ pathname }) {
   const [isLoading, setLoading] = useState(true);
-
   return (
     <Router>
       <div className="App">

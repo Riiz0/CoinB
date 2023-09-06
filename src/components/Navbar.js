@@ -11,7 +11,7 @@ import logo from '../assets/logo.png'
 function Navbar({ setLoading }) {
   const [scrolling, setScrolling] = useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  
+
   const toggleSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen);
   };
