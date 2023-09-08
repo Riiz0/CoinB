@@ -50,7 +50,7 @@ function Buy() {
             <div className="splide__track">
               <ul className="splide__list">
                 <li className="splide__slide">
-                  <a href="/Swap">
+                  <a href="Buy/Swap">
                     <div className="image-container pop-effect">
                       <img src={Image1} alt="Product 1" />
                       <div className="image-text">Swap</div>
@@ -58,7 +58,7 @@ function Buy() {
                   </a>
                 </li>
                 <li className="splide__slide">
-                  <a href="/BurnPortal">
+                  <a href="Buy/BurnPortal">
                     <div className="image-container pop-effect">
                       <img src={Image2} alt="Product 2" />
                       <div className="image-text">Burn Portal</div>
@@ -66,7 +66,7 @@ function Buy() {
                   </a>
                 </li>
                 <li className="splide__slide">
-                  <a href="/Liquidity">
+                  <a href="Buy/Liquidity">
                     <div className="image-container pop-effect">
                       <img src={Image3} alt="Product 3" />
                       <div className="image-text">Liquidity</div>
@@ -74,7 +74,7 @@ function Buy() {
                   </a>
                 </li>
                 <li className="splide__slide">
-                  <a href="/NFTs">
+                  <a href="Buy/NFTs">
                     <div className="image-container pop-effect">
                       <img src={Image4} alt="Product 4" />
                       <div className="image-text">NFT's</div>
@@ -82,7 +82,7 @@ function Buy() {
                   </a>
                 </li>
                 <li className="splide__slide">
-                  <a href="/More">
+                  <a href="Buy/More">
                     <div className="image-container pop-effect">
                       <img src={Image5} alt="Product 5" />
                       <div className="image-text">More</div>
