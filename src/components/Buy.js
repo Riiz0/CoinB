@@ -11,6 +11,7 @@ import Image2 from '../assets/BurnPortal.png';
 import Image3 from '../assets/Liquidity.png';
 import Image4 from '../assets/NFTs.png';
 import Image5 from '../assets/More.png';
+import Splide_Background_Vid from '../assets/Splide_Background.mp4'
 
 function Buy() {
   useEffect(() => {
@@ -42,31 +43,50 @@ function Buy() {
         {/* Splide Slider Container */}
         <div className="splide-container">
           <div className="splide">
+          <video autoPlay muted loop className="video-background">
+            <source src={Splide_Background_Vid} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
             <div className="splide__track">
               <ul className="splide__list">
-                <li className="splide__slide pop-effect">
-                <a href="/Swap"> {/* Add your destination URL here */}
-                  <img src={Image1} alt="Product 1" />
+                <li className="splide__slide">
+                  <a href="/Swap">
+                    <div className="image-container pop-effect">
+                      <img src={Image1} alt="Product 1" />
+                      <div className="image-text">Swap</div>
+                    </div>
                   </a>
                 </li>
-                <li className="splide__slide pop-effect">
-                <a href="/BurnPortal"> {/* Add your destination URL here */}
-                  <img src={Image2} alt="Product 2" />
+                <li className="splide__slide">
+                  <a href="/BurnPortal">
+                    <div className="image-container pop-effect">
+                      <img src={Image2} alt="Product 2" />
+                      <div className="image-text">Burn Portal</div>
+                    </div>
                   </a>
                 </li>
-                <li className="splide__slide pop-effect">
-                <a href="/Liquidity"> {/* Add your destination URL here */}
-                  <img src={Image3} alt="Product 3" />
+                <li className="splide__slide">
+                  <a href="/Liquidity">
+                    <div className="image-container pop-effect">
+                      <img src={Image3} alt="Product 3" />
+                      <div className="image-text">Liquidity</div>
+                    </div>
                   </a>
                 </li>
-                <li className="splide__slide pop-effect">
-                <a href="/NFTs"> {/* Add your destination URL here */}
-                  <img src={Image4} alt="Product 4" />
+                <li className="splide__slide">
+                  <a href="/NFTs">
+                    <div className="image-container pop-effect">
+                      <img src={Image4} alt="Product 4" />
+                      <div className="image-text">NFT's</div>
+                    </div>
                   </a>
                 </li>
-                <li className="splide__slide pop-effect">
-                <a href="/More"> {/* Add your destination URL here */}
-                  <img src={Image5} alt="Product 5" />
+                <li className="splide__slide">
+                  <a href="/More">
+                    <div className="image-container pop-effect">
+                      <img src={Image5} alt="Product 5" />
+                      <div className="image-text">More</div>
+                    </div>
                   </a>
                 </li>
                 {/* Add more slides with images */}
