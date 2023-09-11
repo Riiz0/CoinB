@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import 'react-tabs/style/react-tabs.css';
 
 //Imports
+import { WalletProvider } from './WalletConnect'; 
 import LoadingScreen from './LoadingScreen';
 import HomeScreen from './HomeScreen';
 import Navbar from './Navbar';
@@ -12,10 +13,10 @@ import Tokenomics from './SideBar Sections/Navigation/Tokenomics';
 import BuyNavbar from './BuyNavbar';
 import Buy from './Buy';
 import Swap from './BuyPage Sections/Swap';
-import BurnPortal from './BuyPage Sections/BurnPortal'
-import Liquidity from './BuyPage Sections/Liquidity'
-import NFTs from './BuyPage Sections/NFTs'
-import More from './BuyPage Sections/More'
+import BurnPortal from './BuyPage Sections/BurnPortal';
+import Liquidity from './BuyPage Sections/Liquidity';
+import NFTs from './BuyPage Sections/NFTs';
+import More from './BuyPage Sections/More';
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="App">
       <LoadingScreen isLoading={isLoading} setLoading={setLoading}>
+      <WalletProvider>
         {isBuyRoute ? <BuyNavbar /> : <Navbar setLoading={setLoading} />}
         
         <div className="content">
@@ -43,6 +45,7 @@ function App() {
             <Route path="/Buy/More" element={<More />} />
           </Routes>
         </div>
+      </WalletProvider>
       </LoadingScreen>
     </div>
   );

@@ -1,23 +1,19 @@
 import React, { useEffect } from 'react';
-//import { SwapWidget } from '@uniswap/widgets';
-//import '@uniswap/widgets/fonts.css';
-
-//Imports
-import '../.././buy.css';
+// import { SwapWidget } from '@uniswap/widgets';
+// import '@uniswap/widgets/fonts.css';
 
 function Swap() {
-  useEffect(() => {
-  }, []);
   return (
     <div>
-        <div name="swap" className="buy-body-top-section">
-          {/* Main Content */}
-          <div className="buy-main-content">
-            <div className="Uniswap">
+      <div name="swap" className="buy-body-top-section">
+        {/* Main Content */}
+        <div className="buy-main-content">
+          <div className="Uniswap">
+            {/* Use the SwapWidget */}
             {/* <SwapWidget /> */}
-            </div>
           </div>
         </div>
+      </div>
     </div>
   );
 }
