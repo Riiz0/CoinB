@@ -3,6 +3,7 @@ import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import '@splidejs/react-splide/css';
+import { Link } from 'react-router-dom';
 
 // Import your images
 import '../buy.css'; // Your CSS import
@@ -50,44 +51,44 @@ function Buy() {
             <div className="splide__track">
               <ul className="splide__list">
                 <li className="splide__slide">
-                  <a href="Buy/Swap">
-                    <div className="image-container pop-effect">
-                      <img src={Image1} alt="Product 1" />
-                      <div className="image-text">Swap</div>
-                    </div>
-                  </a>
+                <Link to="/Buy/Swap">
+                  <div className="image-container pop-effect">
+                    <img src={Image1} alt="Product 1" />
+                    <div className="image-text">Swap</div>
+                  </div>
+                </Link>
                 </li>
                 <li className="splide__slide">
-                  <a href="Buy/BurnPortal">
-                    <div className="image-container pop-effect">
-                      <img src={Image2} alt="Product 2" />
-                      <div className="image-text">Burn Portal</div>
-                    </div>
-                  </a>
+                <Link to="/Buy/BurnPortal">
+                  <div className="image-container pop-effect">
+                    <img src={Image2} alt="Product 2" />
+                    <div className="image-text">Burn Portal</div>
+                  </div>
+                </Link>
                 </li>
                 <li className="splide__slide">
-                  <a href="Buy/Liquidity">
-                    <div className="image-container pop-effect">
-                      <img src={Image3} alt="Product 3" />
-                      <div className="image-text">Liquidity</div>
-                    </div>
-                  </a>
+                <Link to="/Buy/Liquidity">
+                  <div className="image-container pop-effect">
+                    <img src={Image3} alt="Product 3" />
+                    <div className="image-text">Liquidity</div>
+                  </div>
+                </Link>
                 </li>
                 <li className="splide__slide">
-                  <a href="Buy/NFTs">
+                  <Link to="/Buy/NFTs">
                     <div className="image-container pop-effect">
                       <img src={Image4} alt="Product 4" />
                       <div className="image-text">NFT's</div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 <li className="splide__slide">
-                  <a href="Buy/More">
+                  <Link to="/Buy/More">
                     <div className="image-container pop-effect">
                       <img src={Image5} alt="Product 5" />
                       <div className="image-text">More</div>
                     </div>
-                  </a>
+                  </Link>
                 </li>
                 {/* Add more slides with images */}
               </ul>
