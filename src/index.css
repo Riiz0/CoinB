@@ -787,7 +787,7 @@ animation-delay: 0s;
 .ecosystem-boxes-box {
   width: 475px;
   height: 425px;
-  border: 2px solid #0c0b0ab8;
+  border: 2px solid white;
   background-color: transparent;
   border-radius: 42px;
   margin: 10px;
