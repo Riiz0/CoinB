@@ -4,7 +4,6 @@ import { ethers } from 'ethers';
 
 //Imports
 import { useWalletState } from './WalletConnect';
-import { connectWallet, disconnectWallet } from './WalletActions';
 import logo from '../assets/logo.png';
 import networkOptions from './Networks';
 import EthereumLogo from '../assets/Ethereum.png';
@@ -14,10 +13,7 @@ import TestnetLogo from '../assets/Testnet.png';
 function BuyNavbar() {
   const [scrolling, setScrolling] = useState(false);
   const { state, dispatch } = useWalletState(); // Get wallet state
-
-  // Extract wallet state values
   const { connected, account } = state;
-
   const [selectedNetwork, setSelectedNetwork] = useState('Select Network');
 
   const connectHandler = async () => {

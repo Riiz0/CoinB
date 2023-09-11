@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@metamask/detect-provider": "^2.0.0",
+    "@metamask/logo": "^3.1.1",
     "@openzeppelin/contracts": "^4.9.2",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
@@ -11,10 +13,11 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@uniswap/widgets": "^2.53.2",
-    "dotenv": "^16.3.1",
+    "axios": "^1.5.0",
     "ethers": "^6.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
     "react-helmet": "^6.1.0",
     "react-icons-kit": "^2.0.0",
     "react-redux": "^8.1.2",
@@ -53,6 +56,7 @@
     "@nomicfoundation/hardhat-ethers": "^3.0.3",
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "@openzeppelin/hardhat-upgrades": "^2.0.0",
-    "hardhat": "^2.16.1"
+    "hardhat": "^2.16.1",
+    "source-map-loader": "^4.0.1"
   }
 }

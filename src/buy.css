@@ -515,6 +515,14 @@ background-color: #212121
   height: 750px;
 }
 
+/* 
+///////////////////////////////////Swap Page
+*/
+.connected-text {
+  color: white;
+  font-size: 14px;
+}
+
 @media (max-width: 1400px) {
   .buy-navbar-connect-wrapper {
     margin-left: auto; /* Push the connect button to the right */

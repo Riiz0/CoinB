@@ -1,16 +1,13 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
-// Define your initial state
 const initialState = {
   connected: false,
   account: null,
 };
 
-// Define your actions
 const SET_CONNECTED = 'SET_CONNECTED';
 const SET_ACCOUNT = 'SET_ACCOUNT';
 
-// Create a reducer function
 const walletReducer = (state, action) => {
   switch (action.type) {
     case SET_CONNECTED:
@@ -22,10 +19,8 @@ const walletReducer = (state, action) => {
   }
 };
 
-// Create a context
 const WalletContext = createContext();
 
-// Create a provider component
 export const WalletProvider = ({ children }) => {
   const [state, dispatch] = useReducer(walletReducer, initialState);
 
@@ -36,7 +31,6 @@ export const WalletProvider = ({ children }) => {
   );
 };
 
-// Create custom hooks to access the context
 export const useWalletState = () => {
   return useContext(WalletContext);
 };
