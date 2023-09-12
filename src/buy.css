@@ -521,6 +521,7 @@ background-color: #212121
 .connected-text {
   color: white;
   font-size: 14px;
+  margin-bottom: 3px;
 }
 
 @media (max-width: 1400px) {

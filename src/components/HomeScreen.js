@@ -74,6 +74,11 @@ function HomeScreen({ setLoading }) {
           <div className="image-gif-background-image"></div>
         </div>
 
+        <div className="Footer">
+            <div className="Footer-Text">
+              &copy; 2023 Your Crypto Game. All rights reserved.
+            </div>
+          </div>
       </div>
 
       {/* Right Sidebar */}

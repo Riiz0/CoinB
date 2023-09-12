@@ -968,6 +968,17 @@ animation-delay: 0s;
 ///////////////////////////////////////////////////////FOOTER SECTION
  */
 
+ .Footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0c0b0ab8;
+  border-radius: 22px;
+  color: #fff;
+  text-align: center;
+  padding: 0.25rem 0;
+ }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
