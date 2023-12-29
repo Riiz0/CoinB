@@ -837,19 +837,19 @@ animation-delay: 0s;
 }
 
 .tokenomics-box::before {
-  background-image: url('./assets/PlaceHolder_Image2.png');
+  background-image: url('./assets/tokenomics3.png');
 }
 
 .nftcollections-box::before {
-  background-image: url('./assets/Mikasa.png');
+  background-image: url('./assets/NFTCollection.png');
 }
 
 .whitepaper-box::before {
-  background-image: url('./assets/PlaceHolder_Image.png');
+  background-image: url('./assets/Utility.png');
 }
 
 .community-box::before {
-  background-image: url('./assets/PlaceHolder_Image2.png');
+  background-image: url('./assets/community.png');
 }
 
 
@@ -886,7 +886,7 @@ animation-delay: 0s;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-image: url('./assets/PlaceHolder_Image.png'); /* Replace with your image URL */
+  background-image: url('./assets/Gif.gif'); /* Replace with your image URL */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
