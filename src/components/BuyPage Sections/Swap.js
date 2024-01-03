@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SwapWidget } from '@uniswap/widgets';
 import '@uniswap/widgets/fonts.css';
@@ -11,8 +11,6 @@ function Swap() {
   const [isLoading, setLoading] = useState(true);
   const [isConnected, setIsConnected] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-  const navbarRef = useRef(null);
-  const navbarConnectRef = useRef(null);
  
   const UNISWAP_TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
   const NATIVE = 'NATIVE'
@@ -35,30 +33,6 @@ function Swap() {
       setScrolling(false);
     }
   };
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      try {
-        entries.forEach((entry) => {
-          // Your existing code...
-        });
-      } catch (err) {
-        if (err.message !== 'ResizeObserver loop limit exceeded') throw err;
-      }
-    });
-   
-    if (navbarRef.current) {
-      resizeObserver.observe(navbarRef.current);
-    }
-   
-    if (navbarConnectRef.current) {
-      resizeObserver.observe(navbarConnectRef.current);
-    }
-   
-    return () => {
-      resizeObserver.disconnect();
-    };
-   }, []);
    
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -105,13 +79,13 @@ function Swap() {
           </li>
         </ul>
       </div>
-      <div className="buy-network-options" ref={navbarRef}>
+      <div className="buy-network-options">
         <div className="buy-network-links">
           {/* Empty div to maintain layout */}
           <div style={{width: '200px', height: '40px'}}></div>
         </div>
         </div>
-        <div className="buy-navbar-connect" ref={navbarConnectRef}>
+        <div className="buy-navbar-connect">
         {/* Empty div to maintain layout */}
         <div style={{width: '100px', height: '40px'}}></div>
         </div>

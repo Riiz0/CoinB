@@ -223,30 +223,6 @@ code {
 }
 
 /* 
-///////////////////////////////////Mid Container 
-*/
-.buy-mid-container {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-top: 80px;
-  width: 100%; /* Stretch to full width */
-  max-width: 1200px; /* Set a maximum width if needed */
-  height: 750px;
-}
-
-/* 
-///////////////////////////////////Bottom Container 
-*/
-.buy-bottom-container {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-top: 80px;
-  width: 100%; /* Stretch to full width */
-  max-width: 1200px; /* Set a maximum width if needed */
-  height: 750px;
-}
-
-/* 
 ///////////////////////////////////Swap Page
 */
 .connected-text {
@@ -275,6 +251,10 @@ code {
   border-radius: 20px;
  }
  
+ .text-center {
+  text-align: center;
+}
+
  .text-color {
   /* Text color */
   color: #333;
@@ -353,6 +333,24 @@ code {
   margin-bottom: 20px;
  }
  
+/* 
+///////////////////////////////////NFT Page
+*/
+ button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+ }
+ 
+ button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+ }
+
  @media screen and (max-width:900px) {
   .coming-soon-container {
   /* Adjust the container for smaller screens */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Imports
@@ -9,8 +9,6 @@ import '../../buy.css';
 function More() {
   const [isLoading, setLoading] = useState(true);
   const [scrolling, setScrolling] = useState(false);
-  const navbarsRef = useRef(null);
-  const navbarsConnectRef = useRef(null);
  
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -19,30 +17,6 @@ function More() {
       setScrolling(false);
     }
   };
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      try {
-        entries.forEach((entry) => {
-          // Your existing code...
-        });
-      } catch (err) {
-        if (err.message !== 'ResizeObserver loop limit exceeded') throw err;
-      }
-    });
-   
-    if (navbarsRef.current) {
-      resizeObserver.observe(navbarsRef.current);
-    }
-   
-    if (navbarsConnectRef.current) {
-      resizeObserver.observe(navbarsConnectRef.current);
-    }
-   
-    return () => {
-      resizeObserver.disconnect();
-    };
-   }, []);  
  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -82,15 +56,13 @@ function More() {
           </li>
         </ul>
       </div>
-      <div className="buy-network-options" ref={navbarsRef}>
+      <div className="buy-network-options">
         <div className="buy-network-links">
           {/* Empty div to maintain layout */}
-          <div style={{width: '200px', height: '40px'}}></div>
         </div>
         </div>
-        <div className="buy-navbar-connect" ref={navbarsConnectRef}>
-        {/* Empty div to maintain layout */}
-        <div style={{width: '100px', height: '40px'}}></div>
+        <div className="buy-navbar-connect">
+          {/* Empty div to maintain layout */}
         </div>
     </nav>
   </nav>
@@ -98,9 +70,9 @@ function More() {
   <div className="buy-body-top-section">
     {/* Main Content */}
     <div className="buy-main-content">
-     <div className="coming-soon-container">
+     <div className="coming-soon-container text-center">
        {/* Coming Soon */}
-       <h2 className="text-color">Coming Soon!</h2>
+       <h2>Coming Soon!</h2>
        <p className="text-color">We're working hard to bring our new feature to you.</p>
 
        {/* Countdown Timer */}

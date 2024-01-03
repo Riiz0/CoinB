@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ethereum } from '@metamask/detect-provider';
+import { ethers } from "ethers";
 
 // Imports
 import FastLoadingScreen from '../FastLoadingScreen';
@@ -22,16 +23,48 @@ function NFTs() {
   const [isLoading, setLoading] = useState(true);
   const [isConnected, setIsConnected] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const [contractAddress, setContractAddress] = useState('');
+  const [contractABI, setContractABI] = useState([]);
+  const [contractInstance, setContractInstance] = useState(null);
+  const [provider, setProvider] = useState(null);
+  const [signer, setSigner] = useState(null);
+
+  useEffect(() => {
+    if (window.ethereum) {
+      setProvider(new ethers.providers.Web3Provider(window.ethereum));
+    }
+  }, []);
  
   const handleConnect = async () => {
     if (!window.ethereum) {
-      alert('Please install MetaMask!');
+      alert('Please install MetaMask or enable it in your browser.');
       return;
     }
- 
-    await window.ethereum.enable();
-    setIsConnected(true);
-  };
+   
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+   
+      if (accounts.length === 0) {
+        alert('Please log in to MetaMask.');
+        return;
+      }
+   
+      let signer;
+      if (provider) {
+        signer = provider.getSigner();
+   
+        // Check if the user has granted permission to access their account
+        if (signer) {
+          const contract = new ethers.Contract(contractAddress, contractABI, signer);
+          setContractInstance(contract);
+        }
+        setIsConnected(true);
+      }
+    } catch (error) {
+      console.error('Failed to connect to MetaMask:', error);
+      alert('Failed to connect to MetaMask. Please try again.');
+    }
+   };
  
   const handleNetworkChange = async (event) => {
     const selectedNetwork = event.target.value;
@@ -48,6 +81,24 @@ function NFTs() {
       setScrolling(false);
     }
   };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+   
+    if (!contractInstance) {
+      alert("Please connect your wallet first.");
+      return;
+    }
+   
+    // Send the transaction to mint the NFT
+    try {
+      const tx = await contractInstance.mintNFT(signer.getAddress());
+      await tx.wait();
+      alert("NFT minted successfully!");
+    } catch (error) {
+      console.error("Failed to mint NFT:", error);
+    }
+   };
  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -106,7 +157,7 @@ function NFTs() {
     </nav>
   </nav>
     
-     <div className="buy-body-top-section">
+  <div className="buy-body-top-section">
        {/* Main Content */}
        <div className="buy-main-content">
          <div className="Uniswap">
@@ -114,6 +165,9 @@ function NFTs() {
            {isConnected ? (
             <div>
               <p className="connected-text">Your Wallet is Connected</p>
+                <button onClick={handleSubmit} disabled={!contractInstance}>
+                  {isLoading ? "Minting..." : "Mint NFT"}
+                </button>
             </div>
             ) : (
             <div>
