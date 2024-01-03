@@ -55,7 +55,7 @@ for (let i = 1; i <= numNFTs; i++) {
   // Construct metadata
   const metadata = {
     name: `BUNIME NFT #${i}`,
-    description: "A unique NFT from the BUNIMVERSE.",
+    description: "A unique NFT from the BUNIMEVERSE.",
     // Replace with your image path or URI
     image: "ipfs://<your-image-cid>",
     attributes: [

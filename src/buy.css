@@ -23,35 +23,98 @@ code {
 .buy-navbar-container {
   background-color: #0c0b0ab8;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
-  border-radius: 0 0 42px 42px; /* Rounded edges at the top */
+  padding: 0px 30px; /* Decreased padding to make the navbar thinner */
+  border-radius: 0 0 42px 42px;
   margin: 0px auto;
   position: relative;
   width: 100%;
-  z-index: 1000; /* Increase the z-index to ensure it's in front */
-}
-
-.buy-navbar {
+  z-index: 1000;
+ }
+ 
+ .buy-navbar {
   display: flex;
-  justify-content: center; /* Center the content */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0 auto;
   position: relative;
-}
-
-.buy-navbar-connect {
+ }
+ 
+ .buy-logo-title {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
+ }
+ 
+ .buy-logo {
+  width: 52px;
+  height: 52px;
+ }
+ 
+ .buy-title {
+  font-size: 33px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+ }
+ 
+ .buy-nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between; /* Distributes items evenly in the container */
+  width: 100%;
+ }
+ 
+ .buy-nav-links li {
+  margin: 0 15px;
   position: relative;
-}
-
-.buy-navbar-connect button {
-  background-color: #9E9E9E;
-  border: 1px solid #212121; /* Add border style */
+  display: flex;
+  align-items: center;
+ }
+ 
+ .buy-nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  font-size: 21px;
+  padding: 20px 15px; /* Increased padding to create more space from the letters to the edge of the tab */
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+ }
+ 
+ .buy-nav-links li a:hover {
+  background-color: #555555;
+ }
+ 
+ .buy-navbar-connect {
+  display: flex;
+  justify-content: flex-end; /* Aligns the button to the right side of the container */
+  align-items: center;
+  width: 100%;
+  margin-right: 10px;
+ }
+ 
+ .buy-network-options{
+  display: flex;
+  justify-content: flex-end; /* Aligns the button to the right side of the container */
+  align-items: center;
+  width: 100%;
+ }
+ 
+ .buy-network-links {
+  margin: 0 250px; /* Decreased margin to bring the network dropdown closer to the "Connect Wallet" button */
+  font-family: 'Outfit';
+  align-items: center;
+  margin-right: 10px;
+ }
+ 
+ .buy-network-links select {
+  background-color: #E75480; /* Darker pink for non-hover state */
+  border: 1px solid #E75480; /* Darker pink for non-hover state */
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -60,194 +123,35 @@ code {
   font-family: 'Outfit';
   border-radius: 12px;
   transition: background-color 0.3s ease;
-}
+ }
+ 
+ .buy-network-links select:hover {
+  background-color: #FFC8DD; /* Lighter pink for hover state */
+  border-color: #FFC8DD; /* Lighter pink for hover state */
+ }
 
-.buy-network-links{
-  list-style: none;
-  display: flex;
-  margin: 0 95px;
-  font-family: 'Outfit';
-  align-items: center;
-  margin-right: 10px;
-}
-
-.buy-network-links li{
-  position: relative; /* Needed for dropdown positioning */
-}
-
-.network-home-link{
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+ .buy-navbar-connect button {
+  background-color: #9E9E9E;
+  border: 1px solid #212121;
   color: white;
-  font-weight: normal;
-  font-size: 14px;
-  border: 1px solid white;
-  padding: 6.5px 0px 6.5px 30px;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-  width: 155px;
-}
-
-.network-home-link:hover{
-  background-color: #555555;
-}
-
-.buy-network-links a:hover{
-  background-color: #555555;
-}
-
-.buy-network-links li:hover .network-dropdown {
-  display: flex; /* Display the dropdown when hovering over a list item */
-  flex-direction: column;
-}
-
-.buy-network-links .network-dropdown a{
-  border: transparent;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: white;
-  font-weight: normal;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.buy-network-links .network-dropdown a:hover{
-  background-color: #555555;
-}
-
-.network-group {
-  margin: 0px 5px;
-  color: white;
-}
-
-.network-group p {
-  font-weight: bold;
-  font-size: 16px; 
-  margin-bottom: 2px; 
-  margin-left: 2px;
-  border-bottom: 1px solid white;
-}
-
-.network-group .network-button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
-  padding: 10px 30px;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
+  padding: 10px 15px;
   white-space: nowrap;
-}
-
-.network-group .network-button:hover {
-  background-color: #555555;
-}
-
-.network-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none; /* Hide the dropdown by default */
-  background-color: #0c0b0ab8;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  width: 185px;
-}
-
-.network-button {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 10px 20px 10px 30px;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-  position: relative; 
-}
-
-.network-logo {
-  position: absolute;
-  left: 5px; /* Adjust the left position to align the logo */
-  top: 50%; /* Position it vertically in the middle */
-  transform: translateY(-50%); /* Center the logo vertically */
-  width: 20px; /* Adjust the width of the logo */
-  height: 20px; /* Adjust the height of the logo */
-}
-
-.network-button:hover {
-  background-color: #555555;
-}
-
-.buy-navbar-connect button:hover {
-  background-color: #555555;
-}
-
-.buy-navbar-connect button.clicked{
-background-color: #212121
-}
-
-.buy-logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 0px; /* Adjust this margin as needed */
-}
-
-.buy-logo {
-  width: 52px;
-  height: 52px;
-}
-
-.buy-title {
-  font-size: 33px;
-  font-weight: bold;
-  color: white;
-  margin: 0;
-}
-
-.buy-nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0 auto;
-  padding: 0 auto;
   font-family: 'Outfit';
-  align-items: center;
-}
-
-.buy-nav-links li {
-  margin: 0 15px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.buy-nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: normal;
-  font-size: 21px;
-  padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: background-color 0.3s ease;
-  white-space: nowrap;
-}
-
-.buy-nav-links li a:hover{
+ }
+ 
+ .buy-navbar-connect button:hover {
   background-color: #555555;
-}
-
-.dropdown {
+ }
+ 
+ .buy-navbar-connect button.clicked {
+  background-color: #212121;
+ }
+ 
+ .dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -257,66 +161,37 @@ background-color: #212121
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   width: 150px;
-}
-
-.buy-nav-links li:hover .dropdown {
-  display: flex; /* Display the dropdown when hovering over a list item */
-  flex-direction: column;
-}
-
-.buy-fixed-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: transparent;
-  padding: 0 20px;
-  border-radius: 42px;
-  z-index: 1000; /* Ensure the navbar appears above other content */
-}
-
-.gg-chevron-down {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  color: white;
-  transform: scale(var(--ggs,1));
-  width: 22px;
-  height: 22px;
-  border: 2px solid transparent;
-  border-radius: 100px
  }
  
- .gg-chevron-down::after {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-bottom: 2px solid;
-  border-right: 2px solid;
-  transform: rotate(45deg);
-  left: 5px;
-  top: 4px
+ .buy-nav-links li:hover .dropdown {
+  display: flex; /* Display the dropdown when hovering over a list item */
+  flex-direction: column;
  }
-
- .home-link {
-  display: flex;
-  align-items: center;
+ 
+ .dropdown li {
+  padding: 10px;
+ }
+ 
+ .dropdown li a {
   text-decoration: none;
   color: white;
   font-weight: normal;
   font-size: 21px;
-  padding: 20px;
+  padding: 10px; /* Decreased padding to reduce the size of the links */
   border-radius: 8px;
   transition: background-color 0.3s ease;
   white-space: nowrap;
-}
+  line-height: 1; /* Reduced line-height to reduce the space between lines of text */
+ }
+ 
+ .dropdown li a:hover {
+  background-color: #555555;
+ } 
 
-.home-link i {
-  margin-left: 2px; /* Adjust the spacing between "Home" and the arrow icon */
-}
+ .home-link {
+  display: flex; /* Allows the text and the icon to be displayed next to each other */
+  align-items: center;
+ }
 
 /* 
 ///////////////////////////////////////////////////////Main Content
@@ -345,150 +220,6 @@ background-color: #212121
   width: 100%; /* Set the width to 100% to fill the container */
   height: auto; /* Adjust the height as needed */
   position: relative; /* Add relative positioning to the container */
-}
-
-/* Splide Slider Container */
-.splide-container {
-  border-radius: 25px; /* Add rounded corners to the slider container */
-  overflow: hidden; /* Hide overflowing content */
-  width: 85%; /* Adjust the width as needed */
-  height: 100%;
-  border: 2px solid white;
-}
-
-/* Updated Splide Slider Styles */
-.splide {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: transparent; /* Change the background color */
-}
-
-.video-background {
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Place the video behind other content */
-  opacity: 65%;
-}
-
-.splide__track {
-  gap: 200px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: flex-start;
-  transition: transform 0.3s ease-in-out;
-}
-
-.splide__slide {
-  position: relative;
-  flex: 0 0 auto;
-  padding-top: 60px;
-  padding-bottom: 90px;
-  max-width: 100%;
-  text-align: center;
-  list-style: none; /* Remove bullet points */
-  background-color: transparent; /* Remove background color */
-  border-radius: 0; /* Remove border radius */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.splide__slide a {
-  display: flex;
-  align-items: flex-start; /* Align text to the bottom right */
-  text-decoration: none; /* Remove underline from anchor tags */
-  position: relative;
-}
-
-.splide__slide img {
-  width: 87%; /* Let the width adjust proportionally */
-  object-fit: contain; /* Maintain aspect ratio */
-  border: 5px solid white;
-  background-color: rgba(255, 255, 255, 0.343);
-  border-radius: 42px;
-  margin-right: 175px;
-  transition: transform 0.3s ease-in-out;
-  opacity: 90%;
-}
-
-.splide__slide:hover img{
-  transform: scale(1.1); /* Enlarge the slide on hover */
-}
-
-.image-container {
-  position: relative;
-  width:92%;
-}
-
-.image-text {
-  position: absolute;
-  top: 28px;
-  right: 180px;
-  padding: 10px;
-  font-size: 92px;
-  font-weight: bold;
-  color: white;
-  z-index: 1;
-  background-color: transparent;
-  transition: transform 0.3s ease-in-out;
-}
-
-.splide__slide:hover .image-text {
-  border-color: #FFC8DD; /* Border color for the hovered slide */
-  transform: scale(1.3); /* Enlarge the slide and text on hover */
-  opacity: 1; /* Show the text on hover */
-}
-
-.splide__slide img:hover {
-  border-color: #FFC8DD;
-}
-
-/* CSS for the pop effect */
-.pop-effect img {
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Add transitions for smooth animation */
-}
-
-.pop-effect img:hover {
-  border-color: #FFC8DD; /* Border color for the hovered image */
-  transform: scale(1.1); /* Enlarge the image on hover */
-}
-
-/* Image Thumbnails Container */
-.image-thumbnails {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  margin-top: 20px; /* Adjust the margin as needed */
-}
-
-/* Navigation Dots */
-.splide__pagination {
-  position: absolute !important;
-  bottom: 20px !important; /* Adjust the distance from the bottom */
-  left: 0 !important;
-  right: 0 !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-
-.splide__pagination__page {
-  width: 12px !important; /* Adjust the width of each dot */
-  height: 12px !important; /* Adjust the height of each dot */
-  margin: 0 6px !important; /* Adjust the margin between dots */
-  background-color: rgb(255, 255, 255) !important; /* Default dot color */
-  border-radius: 50% !important; /* Make dots circular */
-  cursor: pointer !important;
-  transition: background-color 0.3s ease !important; /* Smooth transition for the dot color change */
-}
-
-/* Style for the active dot */
-.splide__pagination__page.splide__pagination__page--active {
-  background-color: white !important; /* Active dot color */
 }
 
 /* 
@@ -523,6 +254,112 @@ background-color: #212121
   font-size: 14px;
   margin-bottom: 3px;
 }
+
+/* 
+///////////////////////////////////More Page
+*/
+.coming-soon-container {
+  /* Border around the container */
+  border: 1px solid #ccc;
+  /* Padding inside the container */
+  padding: 20px;
+  /* Background color */
+  background-color: #f9f9f9;
+  /* Center the container horizontally */
+  margin: 0 auto;
+  /* Give the container a maximum width */
+  max-width: 600px;
+  /* Add some box shadows for a modern look */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  /* Add rounded corners */
+  border-radius: 20px;
+ }
+ 
+ .text-color {
+  /* Text color */
+  color: #333;
+  /* Font size */
+  font-size: 1.5em;
+  /* Margin below the text */
+  margin-bottom: 10px;
+  /* Use a modern sans-serif font */
+  font-family: 'Josefin Sans', sans-serif;
+  /* Add some letter spacing for a more modern look */
+  letter-spacing: 1px;
+ }
+ 
+ .form-color {
+  /* Background color */
+  background-color: #fff;
+  /* Padding inside the form */
+  padding: 10px;
+  /* Border radius */
+  border-radius: 10px;
+  /* Margin below the form */
+  margin-bottom: 20px;
+  /* Add some box shadows for a modern look */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .input-color {
+  /* Width of the input field */
+  width: 100%;
+  /* Padding inside the input field */
+  padding: 10px 0px;
+  /* Border radius */
+  border-radius: 10px;
+  /* Border */
+  border: 2px solid #777777;
+  /* Margin below the input field */
+  margin-bottom: 10px;
+  /* Outline none */
+  outline: none;
+  /* Font size */
+  font-size: 1.2rem;
+  /* Add some transition for a smooth focus effect */
+  transition: border-color 0.3s ease;
+ }
+ 
+ .button-color {
+  /* Width of the button */
+  width: 100%;
+  /* Padding inside the button */
+  padding: 1rem 2rem;
+  /* Border radius */
+  border-radius: 20px;
+  /* Border */
+  border: 2px solid #0077ff; 
+  /* Background color */
+  background: linear-gradient(to right, #0077ff, #0056b3); 
+  /* Color of the text */
+  color: #fff;
+  /* Cursor style */
+  cursor: pointer;
+  /* Transition effect */
+  transition: background-color 0.3s ease;
+ }
+ 
+ .button-color:hover {
+  /* Change the background color when hovering */
+  background: linear-gradient(to left, #0077ff, #0056b3);
+ }
+ 
+ .social-color {
+  /* Display the links as block elements */
+  display: flex;
+  /* Justify the links */
+  justify-content: space-between;
+  /* Margin below the social links */
+  margin-bottom: 20px;
+ }
+ 
+ @media screen and (max-width:900px) {
+  .coming-soon-container {
+  /* Adjust the container for smaller screens */
+  width: 100%;
+  margin: auto;
+  }
+ } 
 
 @media (max-width: 1400px) {
   .buy-navbar-connect-wrapper {

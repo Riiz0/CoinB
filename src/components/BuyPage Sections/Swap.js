@@ -1,56 +1,139 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { SwapWidget } from '@uniswap/widgets';
 import '@uniswap/widgets/fonts.css';
 
 // Imports
-import { useWalletState } from '../WalletConnect';
-import MetamaskLogo from '../MetamaskLogo';
+import FastLoadingScreen from '../FastLoadingScreen';
 import '../../buy.css';
 
-const connectTextStyles = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  textAlign: 'center',
-  color: 'white', // White font color
-  fontWeight: 'bold',
-  fontSize: '18px',
-};
-
 function Swap() {
-  const { state } = useWalletState();
-  const { connected } = state;
+  const [isLoading, setLoading] = useState(true);
+  const [isConnected, setIsConnected] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+  const navbarRef = useRef(null);
+  const navbarConnectRef = useRef(null);
+ 
+  const UNISWAP_TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
+  const NATIVE = 'NATIVE'
+  const USDT = '0xdAC17F958D2ee523a2206206994597C13D831ec7'
 
-  return (
-    <div>
-      <div name="swap" className="buy-body-top-section">
-        {/* Main Content */}
-        <div className="buy-main-content">
-          <div className="Uniswap">
-            {/* Conditionally render wallet connection status */}
-            {connected ? (
-              // Wallet is connected, display connected components
-              <div>
-                <p className="connected-text">Your Wallet is Connected</p>
-                {/* Include SwapWidget here */}
-                <SwapWidget />
-              </div>
-            ) : (
-              // Wallet is not connected, display connect button from Uniswap widget
-              <div>
-                {/* Include the MetamaskLogo component */}
-                <MetamaskLogo />
-                {/* Centered "Please Connect Wallet" text */}
-                <p style={connectTextStyles}>Please Connect Wallet</p>
-              </div>
-            )}
-          </div>
+  const handleConnect = async () => {
+    if (!window.ethereum) {
+      alert('Please install MetaMask!');
+      return;
+    }
+ 
+    await window.ethereum.enable();
+    setIsConnected(true);
+  };
+ 
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      try {
+        entries.forEach((entry) => {
+          // Your existing code...
+        });
+      } catch (err) {
+        if (err.message !== 'ResizeObserver loop limit exceeded') throw err;
+      }
+    });
+   
+    if (navbarRef.current) {
+      resizeObserver.observe(navbarRef.current);
+    }
+   
+    if (navbarConnectRef.current) {
+      resizeObserver.observe(navbarConnectRef.current);
+    }
+   
+    return () => {
+      resizeObserver.disconnect();
+    };
+   }, []);
+   
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+ 
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+ 
+  const buyNavbarClass = scrolling ? 'navbar buy-fixed-navbar' : 'navbar';
+
+  useEffect(() => {
+    // Simulate network request
+    setTimeout(() => {
+      setLoading(false);
+    }, 375);
+  }, []);
+
+ return (
+  <FastLoadingScreen isLoading={isLoading}>
+  <>
+   <nav className={buyNavbarClass}>
+    <nav className="buy-navbar-container">
+      <div className="buy-navbar">
+        <div className="buy-logo-title">
+          <img src="/logo.png" alt="Logo" className="logo" />
+            <h1 className="buy-title">BUNIME</h1>
         </div>
+        <ul className="buy-nav-links">
+          <li><Link to="/Swap">Swap</Link></li>
+          <li><Link to="/NFTs">NFT's</Link></li>
+          <li>
+            <div className="dropdown">
+              <Link to="/BurnPortal">Burn Portal</Link>
+              <Link to="/Liquidity">Liquidity</Link>
+            </div>
+            <Link to="/More" className="home-link">{' '} More <i className="gg-chevron-down"></i></Link>
+          </li>
+        </ul>
       </div>
-    </div>
-  );
+      <div className="buy-network-options" ref={navbarRef}>
+        <div className="buy-network-links">
+          {/* Empty div to maintain layout */}
+          <div style={{width: '200px', height: '40px'}}></div>
+        </div>
+        </div>
+        <div className="buy-navbar-connect" ref={navbarConnectRef}>
+        {/* Empty div to maintain layout */}
+        <div style={{width: '100px', height: '40px'}}></div>
+        </div>
+    </nav>
+  </nav>
+    
+     <div className="buy-body-top-section">
+       {/* Main Content */}
+       <div className="buy-main-content">
+        <div className="Uniswap">
+          <SwapWidget 
+            tokenList={UNISWAP_TOKEN_LIST}
+            defaultInputTokenAddress={USDT}
+            defaultInputAmount={0}
+            defaultOutputTokenAddress={NATIVE} 
+          onConnect={handleConnect} />
+        </div>
+       </div>
+     </div>
+    </>
+    </FastLoadingScreen>
+ );
 }
-
 
 export default Swap;
