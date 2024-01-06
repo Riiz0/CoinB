@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #7784",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Purple",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Karen",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Shade Seekers",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Whispering Glade",
+      "rarity": "Uncommon"
+    }
+  ]
+}

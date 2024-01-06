@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #5839",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cubic Bronze",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "All-Stars",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Valkyrie's Vigil",
+      "rarity": "Legendary"
+    }
+  ]
+}

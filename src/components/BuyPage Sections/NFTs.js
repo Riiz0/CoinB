@@ -657,7 +657,7 @@ function NFTs() {
     }
    
     // Define the metadata for the new NFT
-    const tokenURI = `https://ipfs.nft.storage/${process.env.NFT_STORAGE_CID}`;
+    const tokenURI = `https://ipfs.nft.storage/${process.env.NFT_METADATA_STORAGE_CID}`;
    
     try {
     // Start the loading process

@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #3048",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Purple",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Sassy",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Valhalla Vanguard",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Siren's Song",
+      "rarity": "Uncommon"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #2474",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Grey",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Shadow Stalker",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Whispering Glade",
+      "rarity": "Uncommon"
+    }
+  ]
+}

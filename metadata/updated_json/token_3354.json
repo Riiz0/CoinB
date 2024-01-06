@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #3354",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Tan",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Raft",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Shadow Stalker",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Forgotten Fables",
+      "rarity": "Common"
+    }
+  ]
+}

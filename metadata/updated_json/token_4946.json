@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #4946",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Orange",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Raft",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Gourmets",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Whispering Glade",
+      "rarity": "Uncommon"
+    }
+  ]
+}

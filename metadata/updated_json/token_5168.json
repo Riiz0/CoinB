@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #5168",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Purple",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Steep",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Fiesta",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Whispering Glade",
+      "rarity": "Uncommon"
+    }
+  ]
+}

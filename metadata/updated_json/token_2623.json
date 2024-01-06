@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #2623",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cosmic Canvas",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "All-Stars",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "None",
+      "rarity": "Common"
+    }
+  ]
+}

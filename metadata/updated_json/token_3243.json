@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #3243",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cyan",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Karen",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "None",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Inferno's Fury",
+      "rarity": "Epic"
+    }
+  ]
+}

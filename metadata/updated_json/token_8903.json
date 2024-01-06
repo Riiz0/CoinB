@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #8903",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cosmic Canvas",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "None",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Pals",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Mystical Menagerie",
+      "rarity": "Common"
+    }
+  ]
+}
