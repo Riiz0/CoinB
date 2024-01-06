@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #8886",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Purple",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Comfort",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Celestial Compass",
+      "rarity": "Rare"
+    }
+  ]
+}

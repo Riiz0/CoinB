@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #449",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Ephemeral Dreamscapes",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Raft",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "City Slicker",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "None",
+      "rarity": "Common"
+    }
+  ]
+}

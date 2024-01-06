@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #520",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Chromatic Verse",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Intellect",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Valhalla Vanguard",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Forgotten Fables",
+      "rarity": "Common"
+    }
+  ]
+}

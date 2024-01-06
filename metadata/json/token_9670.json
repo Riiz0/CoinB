@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #9670",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Grey",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Valhalla Vanguard",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Shadow Kin",
+      "rarity": "Uncommon"
+    }
+  ]
+}

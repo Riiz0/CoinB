@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #2884",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Ephemeral Dreamscapes",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Down Hill",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Peak Performers",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Celestial Compass",
+      "rarity": "Rare"
+    }
+  ]
+}

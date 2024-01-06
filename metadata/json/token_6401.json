@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #6401",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cubic Blue",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Shadow Stalker",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Inferno's Fury",
+      "rarity": "Epic"
+    }
+  ]
+}

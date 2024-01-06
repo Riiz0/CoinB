@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #9110",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Orange",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Karen",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "All-Stars",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Cerberus' Gate",
+      "rarity": "Rare"
+    }
+  ]
+}

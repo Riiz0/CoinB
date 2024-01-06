@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #1528",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Black",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "None",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Flappers",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Siren's Song",
+      "rarity": "Uncommon"
+    }
+  ]
+}

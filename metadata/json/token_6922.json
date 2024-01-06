@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #6922",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cubic Blue",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Kratos",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Peak Performers",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Cosmic Curiosities",
+      "rarity": "Common"
+    }
+  ]
+}

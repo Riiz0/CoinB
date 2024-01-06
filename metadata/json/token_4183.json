@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #4183",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Orange",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Raft",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Fiesta",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Shadow Kin",
+      "rarity": "Uncommon"
+    }
+  ]
+}

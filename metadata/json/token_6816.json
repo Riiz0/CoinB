@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #6816",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Dark Green",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Down Hill",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Valhalla Vanguard",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Mystical Menagerie",
+      "rarity": "Common"
+    }
+  ]
+}

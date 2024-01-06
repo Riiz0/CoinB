@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #5733",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Aqua Squiggle",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Steep",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Siesta",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Inferno's Fury",
+      "rarity": "Epic"
+    }
+  ]
+}

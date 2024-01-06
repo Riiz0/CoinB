@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #561",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Grey",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "None",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Fiesta",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Mystical Menagerie",
+      "rarity": "Common"
+    }
+  ]
+}

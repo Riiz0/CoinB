@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #3893",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Native Squiggle",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Gourmets",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Mystical Menagerie",
+      "rarity": "Common"
+    }
+  ]
+}

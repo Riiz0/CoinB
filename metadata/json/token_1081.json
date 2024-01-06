@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #1081",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Native Squiggle",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Starlight Scepter",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Celestial Compass",
+      "rarity": "Rare"
+    }
+  ]
+}

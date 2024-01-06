@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #6345",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Tan",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Down Hill",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Pals",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Shadow Kin",
+      "rarity": "Uncommon"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #8822",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Tan",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Raft",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Comfort",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Siren's Song",
+      "rarity": "Uncommon"
+    }
+  ]
+}

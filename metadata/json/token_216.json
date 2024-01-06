@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #216",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Grey",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Karen",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Peak Performers",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Cosmic Curiosities",
+      "rarity": "Common"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #729",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Black",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Intellect",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Shadow Stalker",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Shadow Kin",
+      "rarity": "Uncommon"
+    }
+  ]
+}

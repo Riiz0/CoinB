@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #2405",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Chromatic Verse",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Karen",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "City Slicker",
+      "rarity": "Rare"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Celestial Compass",
+      "rarity": "Rare"
+    }
+  ]
+}

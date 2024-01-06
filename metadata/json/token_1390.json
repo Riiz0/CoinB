@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #1390",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Shifting Horizon",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Sassy",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "All-Stars",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Cosmic Curiosities",
+      "rarity": "Common"
+    }
+  ]
+}

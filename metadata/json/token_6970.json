@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #6970",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Army Green",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "SSX",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Techno-Berserker",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Forgotten Fables",
+      "rarity": "Common"
+    }
+  ]
+}

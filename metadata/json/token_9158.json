@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #9158",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Hopps Solo",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Black",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Karen",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Gourmets",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Cosmic Curiosities",
+      "rarity": "Common"
+    }
+  ]
+}

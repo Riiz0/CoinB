@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #3055",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Tan",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Intellect",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Skyline Crew",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Shadow Kin",
+      "rarity": "Uncommon"
+    }
+  ]
+}

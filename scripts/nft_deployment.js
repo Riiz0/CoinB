@@ -1,25 +1,36 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  // Fetch contract to deploy
-  const NFTContract = await ethers.getContractFactory("BUNIMENFTCollection");
+ const [deployer] = await ethers.getSigners();
 
-  // Fetch accounts
-  const accounts = await ethers.getSigners();
+ console.log(
+ "Deploying contracts with the account:",
+ deployer.address
+ );
 
-  console.log(`Accounts fetched:\n${accounts[0].address}\n${accounts[1].address}\n${accounts[2].address}`);
+ const ContractFactory = await ethers.getContractFactory("BUNIMENFTContract");
+ const contract = await ContractFactory.deploy();
 
-  // Deploy contract
-  const BUNINFT = await NFTContract.deploy();
+ // Wait for the contract to be mined
+ await contract.waitForDeployment();
 
-  await BUNINFT.deployed();
+ console.log("Contract deployed to:", contract.target);
 
-  console.log("BUNIMENFTCollection deployed to:", BUNINFT.address);
+ // Set the mint start time
+ const mintStartTime = Math.floor(Date.now() / 1000); // Current Unix timestamp
+ await contract.setMintDate(mintStartTime);
+ console.log(`Mint start time set to ${mintStartTime}`);
 }
 
 main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+ .then(() => process.exit(0))
+ .catch((error) => {
+ console.error(error);
+ process.exit(1);
+ });
+
+  
+
+//7 Days from now -> const mintStartTime = Math.floor((new Date().getTime() + 7 * 24 * 60 * 60 * 1000) / 1000);
+//Current time -> const mintStartTime = Math.floor(new Date().getTime() / 1000);
+ 

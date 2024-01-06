@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #2390",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Thumper Thumpster",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Cubic Green",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Sassy",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Comfort",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Forgotten Fables",
+      "rarity": "Common"
+    }
+  ]
+}

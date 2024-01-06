@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #3472",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Carrot Top Coco",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Pixelscape",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Down Hill",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Shade Seekers",
+      "rarity": "Uncommon"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Mystical Menagerie",
+      "rarity": "Common"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #4663",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Army Red",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Down Hill",
+      "rarity": "Epic"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "Eternal Ember",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Cosmic Curiosities",
+      "rarity": "Common"
+    }
+  ]
+}

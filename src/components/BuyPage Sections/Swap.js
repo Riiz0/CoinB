@@ -82,12 +82,10 @@ function Swap() {
       <div className="buy-network-options">
         <div className="buy-network-links">
           {/* Empty div to maintain layout */}
-          <div style={{width: '200px', height: '40px'}}></div>
         </div>
         </div>
         <div className="buy-navbar-connect">
         {/* Empty div to maintain layout */}
-        <div style={{width: '100px', height: '40px'}}></div>
         </div>
     </nav>
   </nav>

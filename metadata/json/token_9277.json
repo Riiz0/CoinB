@@ -1,0 +1,32 @@
+{
+  "name": "BUNIME NFT #9277",
+  "description": "A unique NFT from the BUNIMEVERSE.",
+  "image": "ipfs://<your-image-cid>",
+  "attributes": [
+    {
+      "trait_type": "Bunnies",
+      "value": "Bunzilla",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "Background",
+      "value": "Army Orange",
+      "rarity": "Legendary"
+    },
+    {
+      "trait_type": "FaceWear",
+      "value": "Karen",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "HeadGear",
+      "value": "None",
+      "rarity": "Common"
+    },
+    {
+      "trait_type": "Emblems",
+      "value": "Dragonbone Diadem",
+      "rarity": "Legendary"
+    }
+  ]
+}
