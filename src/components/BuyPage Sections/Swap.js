@@ -14,7 +14,12 @@ function Swap() {
  
   const UNISWAP_TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
   const NATIVE = 'NATIVE'
-  const USDT = '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+  const USDT = '0xc2132D05D31c914a87C6611C10748AEb04B58e8F'
+
+  const jsonRpcUrlMap = {
+    1: [`https://rpc.ankr.com/bsc/${process.env.REACT_APP_ANKR_UNIQUE_TOKEN_BNB}`],
+    3: [`https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_PROJECT_ID_POLY_MAIN}`]
+  }
 
   const handleConnect = async () => {
     if (!window.ethereum) {
@@ -95,6 +100,7 @@ function Swap() {
        <div className="buy-main-content">
         <div className="Uniswap">
           <SwapWidget 
+            jsonRpcUrlMap={jsonRpcUrlMap}
             tokenList={UNISWAP_TOKEN_LIST}
             defaultInputTokenAddress={USDT}
             defaultInputAmount={0}

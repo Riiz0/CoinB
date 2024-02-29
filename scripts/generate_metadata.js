@@ -109,7 +109,7 @@ const backgrounds = [
     { name: "Valkyrie's Vigil", rarity: "Legendary" },
   ];
 
-const numNFTs = 6500;
+const numNFTs = 5000;
 
 function weightedRandomSelection(items) {
   const rarityMap = {

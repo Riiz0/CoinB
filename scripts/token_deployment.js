@@ -1,25 +1,25 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  // Fetch contract to deploy
-  const TokenContract = await ethers.getContractFactory("BUNIMEToken");
+   const [deployer] = await ethers.getSigners();
 
-  // Fetch accounts
-  const accounts = await ethers.getSigners();
+   console.log(
+       "Deploying contracts with the account:",
+       deployer.address
+   );
 
-  console.log(`Accounts fetched:\n${accounts[0].address}\n${accounts[1].address}\n${accounts[2].address}`);
+   const ContractFactory = await ethers.getContractFactory("BUNIMEToken");
+   const contract = await ContractFactory.deploy();
 
-  // Deploy contract
-  const BUNI = await TokenContract.deploy("BUNIME", "BUNI", "69420000000000");
+  // Wait for the contract to be mined
+  await contract.waitForDeployment();
 
-  await BUNI.deployed();
-
-  console.log("BUNIMEToken deployed to:", BUNI.address);
+  console.log("Contract deployed to:", contract.target);
 }
 
 main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+   .then(() => process.exit(0))
+   .catch((error) => {
+       console.error(error);
+       process.exit(1);
+   });

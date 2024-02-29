@@ -28,9 +28,3 @@ main()
  console.error(error);
  process.exit(1);
  });
-
-  
-
-//7 Days from now -> const mintStartTime = Math.floor((new Date().getTime() + 7 * 24 * 60 * 60 * 1000) / 1000);
-//Current time -> const mintStartTime = Math.floor(new Date().getTime() / 1000);
- 

@@ -18,8 +18,8 @@ async function overlayImages(baseImagePath, overlayImagePaths, outputImagePath) 
  } 
 
 async function generateImages() {
-  // Loop over the 10,000 metadata files
-  for (let i = 1; i <= 10000; i++) {
+  // Loop over the 5000 metadata files
+  for (let i = 1; i <= 5000; i++) {
    // Load the metadata file
    const metadata = JSON.parse(fs.readFileSync(`./metadata/json/token_${i}.json`));
  

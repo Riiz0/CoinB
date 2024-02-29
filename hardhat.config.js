@@ -12,7 +12,7 @@ module.exports = {
      accounts: [`0x${process.env.PRIVATE_KEY}`],
    },
    ethereum: {
-    url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.REACT_APP_ALCHEMY_PROJECT_ID_ETH_MAINNET}`,
+    url: `https://eth-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_PROJECT_ID_ETH_MAIN}`,
     accounts: [`0x${process.env.PRIVATE_KEY}`],
   },
   bnbTestnet: {
@@ -20,7 +20,7 @@ module.exports = {
     accounts: [`0x${process.env.PRIVATE_KEY}`],
   },
   binance: {
-    url: `https://rpc.ankr.com/bsc/${process.env.ANKR_UNIQUE_TOKEN}`,
+    url: `https://rpc.ankr.com/bsc/${process.env.REACT_APP_ANKR_UNIQUE_TOKEN_BNB}`,
     accounts: [`0x${process.env.PRIVATE_KEY}`],
   },
   mumbai: {
@@ -28,7 +28,7 @@ module.exports = {
     accounts: [`0x${process.env.PRIVATE_KEY}`],
   },
   polygon: {
-    url: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_PROJECT_ID_POLY_MAINNET}`,
+    url: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_PROJECT_ID_POLY_MAIN}`,
     accounts: [`0x${process.env.PRIVATE_KEY}`],
   }
  },

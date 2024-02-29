@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ethereum } from '@metamask/detect-provider';
+import { ethers } from "ethers";
+import { tokenAbi } from "../../abis/tokenAbi"
 
 // Imports
 import FastLoadingScreen from '../FastLoadingScreen';
@@ -18,28 +19,69 @@ const connectTextStyles = {
  fontSize: '18px',
 };
 
+function ComingSoonPopup({ show, onClose }) {
+  return show ? (
+    <div className="popup" onClick={onClose}>
+      <div className="popup-inner">
+        <h1>Coming Soon</h1>
+        <p>This page is under development and will be available soon.</p>
+      </div>
+    </div>
+  ) : null;
+ }
+ 
 function Liquidity() {
-  const [isLoading, setLoading] = useState(true);
-  const [isConnected, setIsConnected] = useState(false);
   const [scrolling, setScrolling] = useState(false);
- 
+  const [isLoading, setIsLoading] = useState(true);
+  const [isConnected, setIsConnected] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [isUnderDevelopment, setIsUnderDevelopment] = useState(true);
+
+  const contractAddress = "0x1d6eB3Acbe2D5A8e5f4192C339aaaD16644C7363";
+
+  let provider;
+  let signer;
+  let contract;
+
   const handleConnect = async () => {
-    if (!window.ethereum) {
-      alert('Please install MetaMask!');
-      return;
-    }
- 
-    await window.ethereum.enable();
-    setIsConnected(true);
-  };
- 
-  const handleNetworkChange = async (event) => {
-    const selectedNetwork = event.target.value;
-    await ethereum.sendAsync({
-      method: 'wallet_switchEthereumChain',
-      params: [{ chainId: `0x${selectedNetwork}` }],
+    return new Promise((resolve, reject) => {
+      console.log('Attempting to connect to MetaMask...');
+      if (typeof window.ethereum !== 'undefined') {
+        console.log('MetaMask detected. Attempting to request accounts...');
+        window.ethereum.request({ method: 'eth_requestAccounts' })
+          .then(async (accounts) => {
+            console.log('Accounts received:', accounts);
+            if (accounts.length > 0) {
+              console.log('Initializing provider, signer, and contract...');
+              provider = new ethers.BrowserProvider(window.ethereum);
+              signer = await provider.getSigner();
+              contract = new ethers.Contract(contractAddress, tokenAbi, signer);
+              console.log('Provider:', provider);
+              console.log('Signer:', signer);
+              console.log('Contract:', contract);
+              setIsConnected(true);
+              console.log('Connection successful. Wallet connected:', isConnected);
+              
+              // Set isInitialized to true immediately since the contract is already deployed
+              setIsInitialized(true);
+              resolve();
+            }
+          })
+          .catch((error) => {
+            console.error("Error during connection:", error);
+            reject(error);
+          });
+      } else {
+        console.log('Ethereum object not found');
+        reject(new Error('Ethereum object not found'));
+      }
     });
-  };
+  };   
+
+   useEffect(() => {
+    console.log('Wallet connected:', isConnected);
+   }, [isConnected]); 
  
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -65,68 +107,62 @@ function Liquidity() {
     }, 375);
   }, []);
 
- return (
+return (
   <FastLoadingScreen isLoading={isLoading}>
-  <>
-   <nav className={buyNavbarClass}>
-    <nav className="buy-navbar-container">
-      <div className="buy-navbar">
-        <div className="buy-logo-title">
-          <img src="/logo.png" alt="Logo" className="logo" />
-            <h1 className="buy-title">BUNIME</h1>
-        </div>
-        <ul className="buy-nav-links">
-          <li><Link to="/Swap">Swap</Link></li>
-          <li><Link to="/NFTs">NFT's</Link></li>
-          <li>
-            <div className="dropdown">
-              <Link to="/BurnPortal">Burn Portal</Link>
-              <Link to="/Liquidity">Liquidity</Link>
+        <>
+          <nav className={buyNavbarClass}>
+            <nav className="buy-navbar-container">
+              <div className="buy-navbar">
+                <div className="buy-logo-title">
+                  <img src="/logo.png" alt="Logo" className="logo" />
+                   <h1 className="buy-title">BUNIME</h1>
+                </div>
+                <ul className="buy-nav-links">
+                  <li><Link to="/Swap">Swap</Link></li>
+                  <li><Link to="/NFTs">NFT's</Link></li>
+                  <li>
+                   <div className="dropdown">
+                     <Link to="/BurnPortal">Burn Portal</Link>
+                     <Link to="/Liquidity">Liquidity</Link>
+                   </div>
+                   <Link to="/More" className="home-link">{' '} More <i className="gg-chevron-down"></i></Link>
+                  </li>
+                </ul>
+              </div>
+                <div className="buy-network-options">
+                  <div className="buy-network-links">
+                  </div>
+                </div>
+                <div className="buy-navbar-connect">
+                  <button onClick={() => { setIsUnderDevelopment(true); handleConnect(); }}>
+                    {isConnected ? 'Connected' : 'Connect Wallet'}
+                  </button>
+                </div> 
+              </nav>
+            </nav>
+          
+            <div className="buy-body-top-section">
+              {/* Main Content */}
+              <div className="buy-main-content">
+                <div className="Uniswap">
+                  {/* Conditionally render wallet connection status */}
+                  {isConnected ? (
+                   <div>
+                     <p className="connected-text">Your Wallet is Connected</p>
+                   </div>
+                   ) : (
+                   <div>
+                     <MetamaskLogo />
+                     <p style={connectTextStyles}>Please Connect Wallet</p>
+                   </div>
+                   )}
+                </div>
+              </div>
             </div>
-            <Link to="/More" className="home-link">{' '} More <i className="gg-chevron-down"></i></Link>
-          </li>
-        </ul>
-      </div>
-        <div className="buy-network-options">
-          <div className="buy-network-links">
-          <select onChange={handleNetworkChange}>
-            <option value="1">Mainnet</option>
-            <option value="4">Rinkeby</option>
-            <option value="5">Goerli</option>
-            <option value="42">Kovan</option>
-            <option value="137">Polygon</option>
-          </select>
-          </div>
-        </div>
-        <div className="buy-navbar-connect">
-       <button onClick={handleConnect}>
-         {isConnected ? 'Connected' : 'Connect Wallet'}
-       </button>
-     </div> 
-    </nav>
-  </nav>
-    
-     <div className="buy-body-top-section">
-       {/* Main Content */}
-       <div className="buy-main-content">
-         <div className="Uniswap">
-           {/* Conditionally render wallet connection status */}
-           {isConnected ? (
-            <div>
-              <p className="connected-text">Your Wallet is Connected</p>
-            </div>
-            ) : (
-            <div>
-              <MetamaskLogo />
-              <p style={connectTextStyles}>Please Connect Wallet</p>
-            </div>
-            )}
-         </div>
-       </div>
-     </div>
-    </>
+            <ComingSoonPopup show={isUnderDevelopment} onClose={() => setIsUnderDevelopment(false)} />
+          </>
     </FastLoadingScreen>
- );
+   );   
 }
 
 export default Liquidity;

@@ -1,14 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { ethers } from "ethers";
+import { nftAbi } from "../../abis/nftAbi"
 
 // Imports
-import CountdownTimer from './UI Components/CountdownTimer'
 import FastLoadingScreen from '../FastLoadingScreen';
 import '../../buy.css';
+
+
+function ComingSoonPopup({ show, onClose }) {
+  return show ? (
+    <div className="popup" onClick={onClose}>
+      <div className="popup-inner">
+        <h1>Coming Soon</h1>
+        <p>This page is under development and will be available soon.</p>
+      </div>
+    </div>
+  ) : null;
+ } 
  
 function More() {
   const [isLoading, setLoading] = useState(true);
   const [scrolling, setScrolling] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
  
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -17,7 +31,12 @@ function More() {
       setScrolling(false);
     }
   };
- 
+
+  useEffect(() => {
+    // Show the popup as soon as the component mounts
+    setShowPopup(true);
+  }, []);
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -70,30 +89,11 @@ function More() {
   <div className="buy-body-top-section">
     {/* Main Content */}
     <div className="buy-main-content">
-     <div className="coming-soon-container text-center">
-       {/* Coming Soon */}
-       <h2>Coming Soon!</h2>
-       <p className="text-color">We're working hard to bring our new feature to you.</p>
-
-       {/* Countdown Timer */}
-       <CountdownTimer targetDate="2024-10-01T00:00:00Z" />
-
-       {/* Call to Action */}
-       <form className="form-color">
-        <input type="email" placeholder="Enter your email" className="input-color" />
-        <button type="submit" className="button-color">Stay Updated</button>
-       </form>
-
-       {/* Social Media Links */}
-       <div className="social-color">
-        <a href="https://twitter.com/yourprofile"><img src="/icons/twitter.svg" alt="Twitter" /></a>
-        <a href="https://facebook.com/yourprofile"><img src="/icons/facebook.svg" alt="Facebook" /></a>
-       </div>
      </div>
     </div>
-   </div>
-    </>
-    </FastLoadingScreen>
+     <ComingSoonPopup show={showPopup} onClose={() => setShowPopup(false)} />
+  </>
+  </FastLoadingScreen>
  );
 }
 

@@ -6,10 +6,14 @@ import { Element } from 'react-scroll';
 import About from './HomeScreen Sections/About';
 import Ecosystem from './HomeScreen Sections/Ecosystem';
 
-function HomeScreen({ setLoading }) {
+function HomeScreen() {
 
   const handleBuyBuniClick = () => {
     window.open('/Swap', '_blank');
+   };
+
+   const handleExploreClick = () => {
+    window.open('https://app.gitbook.com/o/BmQIxCh3Aqzrr5XNSgM8/s/yIorri0D0EchJZ6OXUQx/', '_blank');
    };
 
   return (
@@ -30,7 +34,9 @@ function HomeScreen({ setLoading }) {
             <Link to="/Swap" target="_blank" onClick={handleBuyBuniClick} className="section-button left-button animate-scale no-underline">
           Buy BUNI
         </Link>
-              <button className="section-button right-button animate-scale">Explore</button>
+        <Link to="https://app.gitbook.com/o/BmQIxCh3Aqzrr5XNSgM8/s/yIorri0D0EchJZ6OXUQx/" target="_blank" onClick={handleExploreClick} className="section-button right-button animate-scale no-underline">
+            Explore
+          </Link>
             </div>
           </div>
         </div>

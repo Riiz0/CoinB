@@ -7,8 +7,8 @@ const directoryPath = path.resolve(__dirname, '../metadata/json/');
 // Directory to save the new JSON files
 const newDirectoryPath = path.resolve(__dirname, '../metadata/updated_json/');
 
-// Shared CID for your images and metadata
-const sharedCID = "bafybeiditjfpvxcpsy23zszsktodagfqxur7tjjpw3xuzfj2qn6xlt76su"; // Replace this with the actual CID
+// Load the tokens_cids.json file
+const tokensCids = require('../metadata/cids/image_cids.json');
 
 fs.readdir(directoryPath, function (err, files) {
  if (err) {
@@ -26,6 +26,12 @@ fs.readdir(directoryPath, function (err, files) {
  
  // Parse the JSON data into an object
  const obj = JSON.parse(data);
+ 
+ // Extract the token ID from the filename
+ const tokenId = path.basename(file, '.json').split('_')[1];
+ 
+ // Get the corresponding CID from the tokensCids object
+ const sharedCID = tokensCids[`token_${tokenId}.png`];
  
  // Update the image property of the object
  obj.image = `ipfs://${sharedCID}`;

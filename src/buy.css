@@ -96,6 +96,7 @@ code {
   align-items: center;
   width: 100%;
   margin-right: 10px;
+  margin-bottom: 25px;
  }
  
  .buy-network-options{
@@ -198,30 +199,85 @@ code {
 */
 .buy-body-top-section {
   display: flex;
-  flex-direction: column;  
-  background-color: transparent;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 0px;
-  margin: 40px auto; /* Add margin to center the section and create distance from top */
-  width: 100%; /* Set the width to 100% to fill the container */
-  height: auto; /* Adjust the height as needed */
-  position: relative; /* Add relative positioning to the container */
-}
+  margin-top: 45px; /* Add this line */
+  /* Rest of your styles */
+ }
 
-.buy-main-content {
-  flex-grow: 1; /* Expand to fill available space */
+ .buy-main-content {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  border-radius: 0px;
-  margin: 0px; /* Remove margin to allow full-width */
-  margin-top: 20px;
-  width: 100%; /* Set the width to 100% to fill the container */
-  height: auto; /* Adjust the height as needed */
-  position: relative; /* Add relative positioning to the container */
-}
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+ }
+ 
+ .mint-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Adjust the width as needed */
+  height: 100%; /* Adjust the height as needed */
+  opacity: 85%;
+  margin-bottom: 5px;
+ } 
+ 
+ .mint-image-container img {
+  width: 33%;
+  height: 33%;
+  object-fit: contain; /* Maintain the aspect ratio */
+  border-radius: 50px; /* Add rounded borders */
+  border: 6px solid black; /* inner border */
+  outline: 5px solid black; /* outer border */
+  outline-offset: 6px; /* gives some space between two borders */
+ }
 
+ .wallet-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+ }
+
+ .mint-status, .transaction-cancelled {
+  margin-top: 10px;
+  color: #ffffff; /* Black text color */
+  font-size: 1em; /* Adjust the font size as needed */
+  margin-bottom: 1em; /* Add some space below the text */
+ }
+
+ .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .popup-inner {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid grey;
+  color: black;
+  border-radius: 10px; /* Make the box more rounded */
+  font-weight: 700; /* Make the font bolder */
+  font-size: 24px; /* Make the font larger */
+  text-align: center; /* Center the text */
+ }
+
+.coming-soon {
+  text-align: center;
+  font-size: 2em;
+  color: #ff0000;
+ } 
 /* 
 ///////////////////////////////////Swap Page
 */
@@ -336,20 +392,55 @@ code {
 /* 
 ///////////////////////////////////NFT Page
 */
- button {
-  padding: 10px 20px;
-  font-size: 18px;
+ 
+button {
+  padding: 20px 40px; /* Increase the padding to make the button larger */
+  font-size: 24px; /* Increase the font size */
   background-color: #5cb85c;
   color: #fff;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
+  margin-top: 30px; /* Increase the margin-top to move the button further below the image */
  }
  
- button:disabled {
+button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+@keyframes bounce {
+ from,
+ 20%,
+ 53%,
+ 80%,
+ to {
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate3d(0, 0, 0);
  }
+
+ 40%,
+ 43% {
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  transform: translate3d(0, -30px, 0);
+ }
+
+ 70% {
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  transform: translate3d(0, -15px, 0);
+ }
+
+ 90% {
+  transform: translate3d(0, -4px, 0);
+ }
+}
+
+.bounce {
+ animation-name: bounce;
+ animation-duration: 2s; /* Slow down the bounce */
+ animation-iteration-count: infinite; /* Make it loop */
+ animation-fill-mode: both;
+}
 
  @media screen and (max-width:900px) {
   .coming-soon-container {

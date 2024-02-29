@@ -1,609 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ethers } from "ethers";
+import { nftAbi } from "../../abis/nftAbi"
 
 // Imports
 import FastLoadingScreen from '../FastLoadingScreen';
 import MetamaskLogo from '../MetamaskLogo';
+import Mint_Image from '../../assets/Mint_Image.png'
 import '../../buy.css';
-
-const contractAbi = [
-  {
-    "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "approved",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "Approval",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "operator",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "approved",
-        "type": "bool"
-      }
-    ],
-    "name": "ApprovalForAll",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_fromTokenId",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_toTokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "BatchMetadataUpdate",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "MetadataUpdate",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "previousOwner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "OwnershipTransferred",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "Transfer",
-    "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "MAX_MINT_PER_WALLET",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "MAX_SUPPLY",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_tokenURI",
-        "type": "string"
-      }
-    ],
-    "name": "_safeMint",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "approve",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "name": "balanceOf",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "getApproved",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getMintStartTime",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "operator",
-        "type": "address"
-      }
-    ],
-    "name": "isApprovedForAll",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "mintStartTime",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "name",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "owner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "ownerOf",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_tokenId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_salePrice",
-        "type": "uint256"
-      }
-    ],
-    "name": "royaltyInfo",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "receiver",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "royaltyAmount",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "royaltyPercent",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "safeTransferFrom",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes",
-        "name": "data",
-        "type": "bytes"
-      }
-    ],
-    "name": "safeTransferFrom",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "operator",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "approved",
-        "type": "bool"
-      }
-    ],
-    "name": "setApprovalForAll",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_mintStartTime",
-        "type": "uint256"
-      }
-    ],
-    "name": "setMintDate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes4",
-        "name": "interfaceId",
-        "type": "bytes4"
-      }
-    ],
-    "name": "supportsInterface",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "symbol",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
-      }
-    ],
-    "name": "tokenByIndex",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "index",
-        "type": "uint256"
-      }
-    ],
-    "name": "tokenOfOwnerByIndex",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "tokenURI",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "totalSupply",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      }
-    ],
-    "name": "transferFrom",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-];
 
 const connectTextStyles = {
  position: 'absolute',
@@ -616,6 +20,25 @@ const connectTextStyles = {
  fontSize: '18px',
 };
 
+function Popup({ show, onClose }) {
+  useEffect(() => {
+    if (show) {
+      const timer = setTimeout(() => {
+        onClose();
+      }, 3000); // Hide after 3 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [show, onClose]);
+ 
+  return show ? (
+    <div className="popup">
+      <div className="popup-inner">
+        <p>Max NFT Mint Reached</p>
+      </div>
+    </div>
+  ) : null;
+ }
+
 function NFTs() {
   const [scrolling, setScrolling] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -623,8 +46,11 @@ function NFTs() {
   const [loading, setLoading] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
   const [isRequestingAccounts, setIsRequestingAccounts] = useState(false);
+  const [isBouncing, setIsBouncing] = useState(false);
+  const [mintStatus, setMintStatus] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
 
-  const contractAddress = "0xc883aD49c01759d27c46251E206CE3912def2989";
+  const contractAddress = "0x1be81063208CFBbEEd81a031950E5d46ABB2a61a";
 
   let provider;
   let signer;
@@ -632,22 +58,14 @@ function NFTs() {
 
   const handleConnect = async () => {
     return new Promise((resolve, reject) => {
-      console.log('Attempting to connect to MetaMask...');
       if (typeof window.ethereum !== 'undefined') {
-        console.log('MetaMask detected. Attempting to request accounts...');
         window.ethereum.request({ method: 'eth_requestAccounts' })
           .then(async (accounts) => {
-            console.log('Accounts received:', accounts);
             if (accounts.length > 0) {
-              console.log('Initializing provider, signer, and contract...');
               provider = new ethers.BrowserProvider(window.ethereum);
               signer = await provider.getSigner();
-              contract = new ethers.Contract(contractAddress, contractAbi, signer);
-              console.log('Provider:', provider);
-              console.log('Signer:', signer);
-              console.log('Contract:', contract);
+              contract = new ethers.Contract(contractAddress, nftAbi, signer);
               setIsConnected(true);
-              console.log('Connection successful. Wallet connected:', isConnected);
               
               // Set isInitialized to true immediately since the contract is already deployed
               setIsInitialized(true);
@@ -663,55 +81,88 @@ function NFTs() {
         reject(new Error('Ethereum object not found'));
       }
     });
-   };   
+  };   
 
    useEffect(() => {
-    console.log('Wallet connected:', isConnected);
-   }, [isConnected]);   
-  
+   }, [isConnected]); 
+
    const handleMint = async () => {
     if (!isConnected || !isInitialized) {
      alert('Cannot mint NFT right now. Please try again later.');
      return;
     }
-     // Wait for handleConnect to finish
-      try {
-        await handleConnect();
-      } catch (error) {
-        console.error('Error connecting:', error);
-        return;
-      }
-    console.log('Contract:', contractAddress);
-    console.log('ABI:', contractAbi);
-    // Define the metadata for the new NFT
-    const tokenURI = "ipfs://bafybeid5mxnzcnefgssabqmeztkstruftl4weunrpbvq3sw3an5a7i2uym/";
-   
+
+    // Wait for handleConnect to finish
     try {
-      // Start the loading process
-      setLoading(true);
+     await handleConnect();
+    } catch (error) {
+     console.error('Error connecting:', error);
+     return;
+    }
+    
+    // Check if the current network is Binance Smart Chain
+    const chainId = await provider.getNetwork().then(network => Number(network.chainId));
+    if (chainId !== 56) { // Use 56 for mainnet or 97 for testnet
+      alert('Please switch to Binance Smart Chain to mint NFTs.');
+      return;
+    }
+
+    // Start the minting process
+    setIsBouncing(true);
+    
+    try {
+     // Start the loading process
+     setLoading(true);
+    
+     // Listen for the NewTokenMinted event
+     setTimeout(() => {
+       const filter = contract.filters.NewTokenMinted();
+       contract.on(filter, async (tokenId) => {
+    
+         // After the NewTokenMinted event is triggered
+         const tokenIdValue = tokenId.args[0];
+         const tokenURI = await contract.tokenURI(tokenIdValue);
+    
+         // Fetch the token metadata
+         const response = await fetch(tokenURI);
+         const metadata = await response.json();
+    
+         // Generate the link
+         const Link = `https://testnets.opensea.io/assets/sepolia/${contractAddress}/${tokenIdValue}`;
+    
+         // Display "Minting successful!" and the OpenSea link
+         setMintStatus(
+           <>
+             <span>Minting successful! </span>
+             <a href={Link} target="_blank" rel="noopener noreferrer"> View your NFT on OpenSea</a>
+           </>
+         );
+       });
+     }, 0);
    
-      // Log the contract object before calling _safeMint
-      console.log('Contract Object Before Mint:', contract);
+     // Call the safeMint function on the contract instance
+     const tx = await contract._safeMint();
+     console.log('After safeMint'); // Debug log
    
-      // Call the _safeMint function on the contract instance
-      const tx = await contract._safeMint(tokenURI);
-   
-      // Wait for the transaction to be mined
-      const receipt = await tx.wait();
-   
-      // Check if the component is still mounted before updating the state
-      if (document.body.contains(document.querySelector('root'))) {
-        alert('NFT minted successfully!');
-      }
-    } catch (err) {
-      console.error('Failed to mint NFT:', err);
-    } finally {
-      // Ensure that loading is set to false regardless of success or failure
-      setLoading(false);
+     // Wait for the transaction to be mined
+     await tx.wait();
+      } catch (err) {
+        console.error('Failed to mint NFT:', err);
+        if (err.code === 4001 && err.message.includes('User denied')) {
+          setIsBouncing(false);
+        }
+        if (err.message.includes('Max mint per wallet reached')) {
+          setShowPopup(true);
+        }
+      } finally {
+     // Ensure that loading is set to false regardless of success or failure
+     setLoading(false);
+     // End the minting process
+     setIsBouncing(false);
     }
    };   
  
-   const handleScroll = () => {
+  const handleScroll = () => {
     if (window.scrollY > 0) {
       setScrolling(true);
     } else {
@@ -773,24 +224,31 @@ function NFTs() {
       <div className="buy-main-content">
         <div className="Uniswap">
           {/* Conditionally render wallet connection status */}
-            {isConnected ? (
-              <div>
-                <p className="connected-text">Your Wallet is Connected</p>
+          {isConnected ? (
+            <div>
+              <div className="mint-image-container">
+                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                <img id="mint-image" src={Mint_Image} className={isBouncing ? 'bounce' : ''} alt="Mint Image" />
+              </div>
+              <div className="wallet-status">
+                <p className="mint-status">{mintStatus}</p>
                 <button onClick={handleMint} disabled={!isInitialized || loading}>Mint NFT</button>
                 </div>
-            ) : (
-              <div>
-                <MetamaskLogo />
-                <p style={connectTextStyles}>Please Connect Wallet</p>
-              </div>
-              )}
             </div>
-          </div>
+            ) : (
+            <div>
+              <MetamaskLogo />
+              <p style={connectTextStyles}>Please Connect Wallet</p>
+            </div>
+          )}
         </div>
-       </>
-     </FastLoadingScreen>
-   );
-   }
+      </div>
+    </div>
+    <Popup show={showPopup} onClose={() => setShowPopup(false)} />
+  </>
+</FastLoadingScreen>
+);
+}
    
-   export default NFTs;
+export default NFTs;
  

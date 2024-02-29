@@ -11,12 +11,15 @@ contract BUNIMENFTContract is ERC721, ERC721URIStorage, ERC721Enumerable, Ownabl
    using Counters for Counters.Counter;
 
    Counters.Counter private _tokenIdCounter;
-   uint256 public constant MAX_SUPPLY = 10000;
+   uint256 public constant MAX_SUPPLY = 5000;
    uint256 public constant MAX_MINT_PER_WALLET = 20;
    uint256 public mintStartTime;
-   uint256 public royaltyPercent = 6; // Set desired royalty percentage (e.g., 6.5%)
+   uint256 public royaltyPercent = 4;
+   string public baseURI;
 
-   constructor() ERC721("BUNIME NFT Collection", "BUNINFT") {}
+  constructor() ERC721("BUNIME Genesis 1", "BUNINFT") {
+    baseURI = "https://bafybeidap6dw3czfivt774osxytv4tcjzyfc72s3mpn5jl6b2t3acj7iue.ipfs.dweb.link/";
+  }
 
    function setMintDate(uint256 _mintStartTime) external onlyOwner {
        mintStartTime = _mintStartTime;
@@ -26,16 +29,23 @@ contract BUNIMENFTContract is ERC721, ERC721URIStorage, ERC721Enumerable, Ownabl
     return mintStartTime;
    }
 
-   function _safeMint(string memory _tokenURI) external {
-       require(totalSupply() < MAX_SUPPLY, "Max supply reached");
-       require(block.timestamp >= mintStartTime, "Mint not started yet");
-       require(_mintedAmount(msg.sender) < MAX_MINT_PER_WALLET, "Max mint per wallet reached");
+    event NewTokenMinted(uint256 indexed tokenId);
+    
+    function _safeMint() external {
+    require(totalSupply() < MAX_SUPPLY, "Max supply reached");
+    require(block.timestamp >= mintStartTime, "Mint not started yet");
+    require(_mintedAmount(msg.sender) < MAX_MINT_PER_WALLET, "Max mint per wallet reached");
 
-       _tokenIdCounter.increment();
-       uint256 tokenId = _tokenIdCounter.current();
-       _safeMint(msg.sender, tokenId);
-       _setTokenURI(tokenId, _tokenURI);
-   }
+    _tokenIdCounter.increment();
+    uint256 tokenId = _tokenIdCounter.current();
+    _safeMint(msg.sender, tokenId);
+    
+    // Generate the _tokenURI within the _safeMint function
+    string memory _tokenURI = string(abi.encodePacked(baseURI, "token_", Strings.toString(tokenId), ".json"));
+    _setTokenURI(tokenId, _tokenURI);
+    
+    emit NewTokenMinted(tokenId);
+    }
 
    function royaltyInfo(uint256 _tokenId, uint256 _salePrice) external view returns (address receiver, uint256 royaltyAmount) {
        return (ownerOf(_tokenId), _salePrice * royaltyPercent / 100);
@@ -61,14 +71,16 @@ contract BUNIMENFTContract is ERC721, ERC721URIStorage, ERC721Enumerable, Ownabl
        return super.supportsInterface(interfaceId);
    }
 
-   function tokenURI(uint256 tokenId)
-       public
-       view
-       override(ERC721, ERC721URIStorage)
-       returns (string memory)
-   {
-       return super.tokenURI(tokenId);
-   }
+    function tokenURI(uint256 tokenId)
+    public
+    view
+    override(ERC721, ERC721URIStorage)
+    returns (string memory)
+    {
+    // Generate the _tokenURI within the tokenURI function
+    string memory _tokenURI = string(abi.encodePacked(baseURI, "token_", Strings.toString(tokenId), ".json"));
+    return _tokenURI;
+    }
 
    function _mintedAmount(address account) private view returns (uint256) {
        return balanceOf(account);
