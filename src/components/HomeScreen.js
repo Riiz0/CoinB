@@ -32,7 +32,7 @@ function HomeScreen() {
             <p className="section-subtitle animate-slide-up">YOUR ANIME COMMUNITY CRYPTOCURRENCY</p>
             <div className="section-buttons animate-fade-in">
             <Link to="/Swap" target="_blank" onClick={handleBuyBuniClick} className="section-button left-button animate-scale no-underline">
-          Buy BUNI
+          DApp
         </Link>
         <Link to="https://app.gitbook.com/o/BmQIxCh3Aqzrr5XNSgM8/s/yIorri0D0EchJZ6OXUQx/" target="_blank" onClick={handleExploreClick} className="section-button right-button animate-scale no-underline">
             Explore
