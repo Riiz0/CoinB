@@ -8,10 +8,6 @@ import Ecosystem from './HomeScreen Sections/Ecosystem';
 
 function HomeScreen() {
 
-  const handleBuyBuniClick = () => {
-    window.open('/Swap', '_blank');
-   };
-
    const handleExploreClick = () => {
     window.open('https://app.gitbook.com/o/BmQIxCh3Aqzrr5XNSgM8/s/yIorri0D0EchJZ6OXUQx/', '_blank');
    };
@@ -31,7 +27,7 @@ function HomeScreen() {
             <h1 className="section-title animate-slide-up">JOIN THE BUNIME REVOLUTION</h1>
             <p className="section-subtitle animate-slide-up">YOUR ANIME COMMUNITY CRYPTOCURRENCY</p>
             <div className="section-buttons animate-fade-in">
-            <Link to="/Swap" onClick={handleBuyBuniClick} className="section-button left-button animate-scale no-underline">
+            <Link to="/Swap" className="section-button left-button animate-scale no-underline">
           DApp
         </Link>
         <Link to="https://app.gitbook.com/o/BmQIxCh3Aqzrr5XNSgM8/s/yIorri0D0EchJZ6OXUQx/" target="_blank" onClick={handleExploreClick} className="section-button right-button animate-scale no-underline">

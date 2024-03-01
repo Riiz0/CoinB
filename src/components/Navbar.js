@@ -45,10 +45,6 @@ function Navbar({ setLoading }) {
     }
   };
 
-  const handleBuyClick = () => {
-    window.open('/Swap', '_blank');
-  };
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -77,7 +73,7 @@ function Navbar({ setLoading }) {
           <Link to="/" onClick={scrollToEcosystem}>Ecosystem</Link>
         </li>
           <li>
-          <Link to="/Swap" onClick={handleBuyClick}>DApp</Link>
+          <Link to="/Swap">DApp</Link>
           </li>
         </ul>
         <SideBarMenu isOpen={isSideBarOpen} onClose={toggleSideBar} />
