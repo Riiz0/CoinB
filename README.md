@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Bunime
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to BUNIME, the Meme utility token of the Anime and Bunny Community.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Link to BUNIME: https://bunime.xyz/
 
-### `npm start`
+Link to WhitePaper: https://app.gitbook.com/o/BmQIxCh3Aqzrr5XNSgM8/s/yIorri0D0EchJZ6OXUQx/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Bunime is a community-powered ecosystem that unites the love of bunnies and anime into a single, exciting project. Operating on Binance and Polygon Networks, Bunime ensures fast transaction speeds, lower gas fees, and increased security and decentralization.
 
-### `npm test`
+## Utility
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Bunime is a Crypto Meme Community Anime Token that allows users to engage in various activities within the Bunime ecosystem. By supporting the Bunime community through transaction fees, users contribute to the spread of love for bunnies and anime. Users can buy, sell, and trade BUNI tokens on supported platforms, with the value of BUNI tokens continuously updated according to market fluctuations. Additionally, users can mint BUNINFTs, Non-Fungible Tokens (NFTs) representing unique bunny and anime-related items, which can be sold or traded on the Polygon and Binance Networks.
 
-### `npm run build`
+## Multi-Chain Token
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Bunime is integrated with Binance, Polygon and Bitcoin networks. This multi-network approach ensures fast transaction speeds, lower gas fees, and increased security and decentralization. It also provides users with flexibility to choose the network that best suits their needs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The BUNI token follows the BRC-20 standard, which is a novel token standard on the Bitcoin blockchain. This standard allows for the creation of fungible tokens on the Bitcoin blockchain, expanding its utility into the realms of tokenization and decentralized finance.
+BRC-20 tokens are fungible digital assets created on the Bitcoin blockchain. These tokens are unique because they are inscribed directly onto Bitcoin’s satoshis using JSON code, making them distinct from traditional tokens on platforms like Ethereum. The BRC-20 standard offers a new way to utilize Bitcoin, allowing for the creation and transfer of tokens within the Bitcoin ecosystem.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## BUNINFTs
 
-### `npm run eject`
+BUNINFTs are Non-Fungible Tokens (NFTs) representing unique bunny and anime-related items. These NFTs are minted on the Ethereum network, allowing users to buy, sell, and trade them on platforms like OpenSea. The creators of the NFT collections receive a 6% royalty fee for their work.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `NFT Collections`
+Bunime also offers NFT collections based on anime, providing users with unique digital collectibles. These collections are available on the Binance and Bitcoin networks, offering users the opportunity to engage with their favorite anime characters in a new way.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tokenomics
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The tokenomics of Bunime are designed around a deflationary mechanism and a transaction fee system. A transaction fee is applied to every transfer of BUNI tokens, set at 1% of the transaction amount, split between the sender and the recipient. Half of the fee goes to the developer of the contract, and the other half is burned, effectively removing it from circulation. This deflationary mechanism helps to control the overall supply of BUNI tokens and potentially increase their value over time.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `Token Contract Addresses`
+Bitcoin Mainnet: !Coming Soon!
+!Coming Soon!
 
-## Learn More
+Polygon Mainnet: 0xF985E5020Ec4d7E18D333BCE872644A150835eE4
+https://polygonscan.com/token/0xF985E5020Ec4d7E18D333BCE872644A150835eE4
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Binance Mainnet: 0xF985E5020Ec4d7E18D333BCE872644A150835eE4
+https://bscscan.com/token/0xF985E5020Ec4d7E18D333BCE872644A150835eE4
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `Total Supply`
+The total supply of BUNI tokens is capped at 69,420,000,000 tokens. This is a fixed supply model, meaning that no more tokens will be minted once this limit is reached. This model is designed to control the token's scarcity and potentially increase its value over time.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Trust and Security
+Bunime places a high emphasis on trust and security. It employs effective identity management and permissions to build trusted networks, ensuring secure transactions within the Bunime ecosystem. Furthermore, Bunime is committed to regulatory compliance and prioritizes strong consumer protections.   
