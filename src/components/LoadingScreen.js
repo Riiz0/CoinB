@@ -9,7 +9,7 @@ function LoadingScreen({ isLoading, setLoading, children }) {
     
     const timeoutId = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Change the delay as needed (in milliseconds)
+    }, 2800); // Change the delay as needed (in milliseconds)
     
     return () => clearTimeout(timeoutId); // Clear the timeout if the component unmounts or isLoading becomes false
   }, [isLoading, setLoading]);

@@ -12,7 +12,7 @@ function Swap() {
   const [isConnected, setIsConnected] = useState(false);
   const [scrolling, setScrolling] = useState(false);
  
-  const UNISWAP_TOKEN_LIST = 'https://gateway.ipfs.io/ipns/tokens.uniswap.org'
+  const UNISWAP_TOKEN_LIST = 'https://tokens-uniswap-org.ipns.dweb.link/'
   const NATIVE = 'NATIVE'
   const USDT = '0xc2132D05D31c914a87C6611C10748AEb04B58e8F'
 
@@ -38,13 +38,6 @@ function Swap() {
       setScrolling(false);
     }
   };
-   
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -105,7 +98,8 @@ function Swap() {
             defaultInputTokenAddress={USDT}
             defaultInputAmount={0}
             defaultOutputTokenAddress={NATIVE} 
-          onConnect={handleConnect} />
+               onConnect={handleConnect}
+             />
         </div>
        </div>
      </div>
